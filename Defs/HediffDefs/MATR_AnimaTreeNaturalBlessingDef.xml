@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <HediffDef>
+        <defName>MATR_AnimaTreeNaturalBlessing</defName>
+        <label>anima tree's natural blessing</label>
+        <description>A blessing granted by an anima tree to connect with nature.</description>
+        <allowedMeditationFocusTypes>
+            <li>Natural</li>
+        </allowedMeditationFocusTypes>
+        <duplicationAllowed>false</duplicationAllowed>
+    </HediffDef>
+</Defs>
