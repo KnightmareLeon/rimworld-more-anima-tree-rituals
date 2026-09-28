@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RitualObligationTargetFilterDef>
+    <defName>MATR_AnimaTree_Alt</defName>
+    <workerClass>MoreAnimaTreeRituals.Rituals.RitualObligationTargetWorker_AnimaTree_Alt</workerClass>
+  </RitualObligationTargetFilterDef>
+
+  <RitualBehaviorDef>
+    <defName>MATR_AnimaTreeNaturalBlessingBestowal</defName>
+    <durationTicks>20000</durationTicks>
+    <workerClass>MoreAnimaTreeRituals.Rituals.RitualBehaviorWorker_AnimaTreeNaturalBlessingBestowal</workerClass>
+    <roles>
+      <li Class="MoreAnimaTreeRituals.Rituals.RitualRoleAnimaTreeNaturalBlessingRequester">
+        <label>requester</label>
+        <id>organizer</id>
+        <required>true</required>
+        <maxCount>1</maxCount>
+        <defaultForSelectedColonist>true</defaultForSelectedColonist>
+        <noCandidatesGizmoDesc>Need a colonist that is not psychically deaf.</noCandidatesGizmoDesc>
+        <allowChild>false</allowChild>
+        <customChildDisallowMessage>Only adults can be granted a blessing from the anima tree.</customChildDisallowMessage>
+      </li>
+    </roles>
+    <spectatorsLabel>Participants</spectatorsLabel>
+    <spectatorGerund>participate</spectatorGerund>
+    <stages>
+      <li Class="MoreAnimaTreeRituals.Rituals.RitualStage_AnimaNaturalBlessingBestowal">
+        <defaultDuty>LinkWithAnimaTreeSecondary</defaultDuty>
+        <endTriggers>
+          <li Class="StageEndTrigger_DurationPercentage">
+            <percentage>1</percentage>
+          </li>
+        </endTriggers>
+        <spectateDistanceOverride>3~4</spectateDistanceOverride>
+        <roleBehaviors>
+          <li>
+            <roleId>organizer</roleId>
+            <dutyDef>MATR_RequestBlessingFromAnimaTree</dutyDef>
+            <customPositions>
+              <li Class="RitualPosition_AnimaLinkingSpot" />
+            </customPositions>
+          </li>
+        </roleBehaviors>
+      </li>
+    </stages>
+  </RitualBehaviorDef>
+
+  <RitualPatternDef>
+    <defName>MATR_AnimaTreeNaturalBlessingBestowal</defName>
+    <ritualOnlyForIdeoMembers>false</ritualOnlyForIdeoMembers>
+    <ritualBehavior>MATR_AnimaTreeNaturalBlessingBestowal</ritualBehavior>
+    <ritualTargetFilter>SelectedThing</ritualTargetFilter>
+    <ritualObligationTargetFilter>MATR_AnimaTree_Alt</ritualObligationTargetFilter>
+    <ritualOutcomeEffect>MATR_AnimaTreeNaturalBlessingBestowal</ritualOutcomeEffect>
+    <playsIdeoMusic>false</playsIdeoMusic>
+    <alwaysStartAnytime>true</alwaysStartAnytime>
+  </RitualPatternDef>
+
+  <PreceptDef>
+    <defName>MATR_AnimaTreeNaturalBlessigBestowal</defName>
+    <label>anima tree natural blessing bestowal</label>
+    <description>A person will ask for a natural blessing from an anima tree. The blessing requester will meditate in front of the anima tree, and if successful, the requester will be granted a blessing. Otherwise, the requester will have to wait again for another opportunity. Others gather in a circle to watch and add psychic strength to the ritual to increase the chances for a blessing.</description>
+    <issue>Ritual</issue>
+    <preceptClass>Precept_Ritual</preceptClass>
+    <visible>false</visible>
+    <classic>true</classic>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <selectionWeight>1.0</selectionWeight>
+    <ritualPatternBase>MATR_AnimaTreeNaturalBlessingBestowal</ritualPatternBase>
+    <iconPath>UI/Icons/Rituals/AnimaTreeLinking</iconPath>
+    <usesIdeoVisualEffects>false</usesIdeoVisualEffects>
+    <mergeRitualGizmosFromAllIdeos>true</mergeRitualGizmosFromAllIdeos>
+    <useRepeatPenalty>true</useRepeatPenalty>
+    <showRitualFloatMenuOption>false</showRitualFloatMenuOption>
+  </PreceptDef>
+
+  <RitualOutcomeEffectDef>
+    <defName>MATR_AnimaTreeNaturalBlessingBestowal</defName>
+    <workerClass>MoreAnimaTreeRituals.Rituals.RitualOutcomeEffectWorker_AnimaTreeNaturalBlessingBestowal</workerClass>
+    <warnOnLowQuality>true</warnOnLowQuality>
+    <givesDevelopmentPoints>false</givesDevelopmentPoints>
+    <comps>
+      <li Class="MoreAnimaTreeRituals.Rituals.RitualOutcomeComp_NaturalParticipantCount">
+        <label>natural participant count</label>
+        <curve>
+          <points>
+            <li>(1, 0.2)</li>
+            <li>(2, 0.4)</li>
+            <li>(4, 0.6)</li>
+            <li>(6, 0.8)</li>
+            <li>(8, 1)</li>
+          </points>
+        </curve>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <label>Rejected</label>
+        <chance>0.4</chance>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <label>Granted</label>
+        <chance>0.6</chance>
+        <positivityIndex>1</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+</Defs>
