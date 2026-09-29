@@ -24,15 +24,20 @@ namespace MoreAnimaTreeRituals.Rituals
 			float quality = GetQuality(jobRitual, progress);
 			Pawn pawn = jobRitual.PawnWithRole("organizer");
             RitualOutcomePossibility outcome = GetOutcome(quality, jobRitual);
+			LetterDef letterDef; string text = "";
             if(outcome.Positive)
             {
                 pawn.health.AddHediff(MATR_HediffDefOf.MATR_AnimaTreeNaturalBlessing);
-            }
-                
-			//string text = "LetterTextLinkingRitualCompleted".Translate(pawn.Named("PAWN"), jobRitual.selectedTarget.Thing.Named("LINKABLE"));
-            string text = "";
-			text = text + "\n\n" + OutcomeQualityBreakdownDesc(quality, progress, jobRitual);
-			//Find.LetterStack.ReceiveLetter("LetterLabelLinkingRitualCompleted".Translate(), text, LetterDefOf.RitualOutcomePositive, new LookTargets(pawn, jobRitual.selectedTarget.Thing));
+				letterDef = LetterDefOf.RitualOutcomePositive;
+				text += "MATR.LetterTextAnimaTreeNaturalBlessingBestowalPositive".Translate(pawn.Named("PAWN"));
+            } 
+			else
+			{
+				letterDef = LetterDefOf.RitualOutcomeNegative;
+				text += "MATR.LetterTextAnimaTreeNaturalBlessingBestowalNegative".Translate(pawn.Named("PAWN"));
+            } 
+			text += "\n\n" + OutcomeQualityBreakdownDesc(quality, progress, jobRitual);
+			Find.LetterStack.ReceiveLetter("MATR.LetterLabelAnimaTreeNaturalBlessingBestowalCompleted".Translate(), text, letterDef, new LookTargets(pawn, jobRitual.selectedTarget.Thing));
 		}
 	}
 }
