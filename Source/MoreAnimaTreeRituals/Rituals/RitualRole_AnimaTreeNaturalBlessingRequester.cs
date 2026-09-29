@@ -3,7 +3,7 @@ using Verse;
 
 namespace MoreAnimaTreeRituals.Rituals
 {
-	public class RitualRoleAnimaTreeNaturalBlessingRequester : RitualRole
+	public class RitualRole_AnimaTreeNaturalBlessingRequester : RitualRole
 	{
 		public override bool AppliesToPawn(Pawn p, out string reason, TargetInfo selectedTarget, LordJob_Ritual ritual = null, RitualRoleAssignments assignments = null, Precept_Ritual precept = null, bool skipReason = false)
 		{
@@ -15,7 +15,7 @@ namespace MoreAnimaTreeRituals.Rituals
 			{
 				if (!skipReason)
 				{
-					reason = "MessageRitualRoleMustBeColonist".Translate(base.Label);
+					reason = "MessageRitualRoleMustBeColonist".Translate(Label);
 				}
 				return false;
 			}
