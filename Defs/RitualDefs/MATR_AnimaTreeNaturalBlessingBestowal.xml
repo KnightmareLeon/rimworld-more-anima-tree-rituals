@@ -58,7 +58,7 @@
 
   <PreceptDef>
     <defName>MATR_AnimaTreeNaturalBlessigBestowal</defName>
-    <label>anima tree natural blessing bestowal</label>
+    <label>natural blessing bestowal</label>
     <description>A person will ask for a natural blessing from an anima tree. The blessing requester will meditate in front of the anima tree, and if successful, the requester will be granted a blessing. Otherwise, the requester will have to wait again for another opportunity. Others gather in a circle to watch and add psychic strength to the ritual to increase the chances for a blessing.</description>
     <issue>Ritual</issue>
     <preceptClass>Precept_Ritual</preceptClass>
@@ -67,7 +67,7 @@
     <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
     <selectionWeight>1.0</selectionWeight>
     <ritualPatternBase>MATR_AnimaTreeNaturalBlessingBestowal</ritualPatternBase>
-    <iconPath>UI/Icons/Rituals/AnimaTreeLinking</iconPath>
+    <iconPath>UI/Icons/Rituals/MATR_AnimaTreeNaturalBlessingBestowal</iconPath>
     <usesIdeoVisualEffects>false</usesIdeoVisualEffects>
     <mergeRitualGizmosFromAllIdeos>true</mergeRitualGizmosFromAllIdeos>
     <useRepeatPenalty>true</useRepeatPenalty>
