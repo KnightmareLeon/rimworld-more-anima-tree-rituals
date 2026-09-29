@@ -10,7 +10,7 @@
     <durationTicks>20000</durationTicks>
     <workerClass>MoreAnimaTreeRituals.Rituals.RitualBehaviorWorker_AnimaTreeNaturalBlessingBestowal</workerClass>
     <roles>
-      <li Class="MoreAnimaTreeRituals.Rituals.RitualRoleAnimaTreeNaturalBlessingRequester">
+      <li Class="MoreAnimaTreeRituals.Rituals.RitualRole_AnimaTreeNaturalBlessingRequester">
         <label>requester</label>
         <id>organizer</id>
         <required>true</required>
@@ -84,11 +84,38 @@
         <label>natural participant count</label>
         <curve>
           <points>
-            <li>(1, 0.2)</li>
-            <li>(2, 0.4)</li>
-            <li>(4, 0.6)</li>
-            <li>(6, 0.8)</li>
-            <li>(8, 1)</li>
+            <li>(1, 0.04)</li>
+            <li>(2, 0.08)</li>
+            <li>(4, 0.12)</li>
+            <li>(6, 0.16)</li>
+            <li>(8, 0.2)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_PawnSkill">
+        <roleId>organizer</roleId>
+        <skillDef>Plants</skillDef>
+        <label>Requester's plant skill</label>
+        <curve>
+          <points>
+            <li>(3, 0.021)</li>
+            <li>(4, 0.027)</li>
+            <li>(5, 0.035)</li>
+            <li>(6, 0.045)</li>
+            <li>(7, 0.058)</li>
+            <li>(8, 0.073)</li>
+            <li>(9, 0.095)</li>
+            <li>(10, 0.122)</li>
+            <li>(11, 0.157)</li>
+            <li>(12, 0.200)</li>
+            <li>(13, 0.258)</li>
+            <li>(14, 0.331)</li>
+            <li>(15, 0.426)</li>
+            <li>(16, 0.546)</li>
+            <li>(17, 0.701)</li>
+            <li>(18, 0.900)</li>
+            <li>(19, 1.155)</li>
+            <li>(20, 1.484)</li>
           </points>
         </curve>
       </li>
@@ -96,12 +123,12 @@
     <outcomeChances>
       <li>
         <label>Rejected</label>
-        <chance>0.4</chance>
+        <chance>0.1</chance>
         <positivityIndex>-1</positivityIndex>
       </li>
       <li>
         <label>Granted</label>
-        <chance>0.6</chance>
+        <chance>0.9</chance>
         <positivityIndex>1</positivityIndex>
       </li>
     </outcomeChances>
