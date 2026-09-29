@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <MATR.LetterTextAnimaTreeNaturalBlessingBestowalPositive>{PAWN_labelShort} has successfully requested for a natural blessing from the anima tree. {PAWN_pronoun} now has the ability to meditate in nature and can now link with the anima tree to gain psychic powers.</MATR.LetterTextAnimaTreeNaturalBlessingBestowalPositive>
+    <MATR.LetterTextAnimaTreeNaturalBlessingBestowalNegative>Regrettably, the anima tree has rejected {PAWN_labelShort}'s request for a natural blessing. {PAWN_pronoun} must wait for 20 days to try again to request for a natural blessing with the highest possible chances.</MATR.LetterTextAnimaTreeNaturalBlessingBestowalNegative>
+    <MATR.LetterLabelAnimaTreeNaturalBlessingBestowalCompleted>Natural Blessing Bestowal Complete</MATR.LetterLabelAnimaTreeNaturalBlessingBestowalCompleted>
+</LanguageData>
