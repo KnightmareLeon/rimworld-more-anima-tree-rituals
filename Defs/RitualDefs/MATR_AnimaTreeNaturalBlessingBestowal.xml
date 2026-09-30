@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <RitualObligationTargetFilterDef>
-    <defName>MATR_AnimaTree_Alt</defName>
-    <workerClass>MoreAnimaTreeRituals.Rituals.RitualObligationTargetWorker_AnimaTree_Alt</workerClass>
+    <defName>MATR_AnimaTreeNaturalBlessingBestowal</defName>
+    <workerClass>MoreAnimaTreeRituals.Rituals.RitualObligationTargetWorker_AnimaTreeNaturalBlessingBestowal</workerClass>
   </RitualObligationTargetFilterDef>
 
   <RitualBehaviorDef>
@@ -50,7 +50,7 @@
     <ritualOnlyForIdeoMembers>false</ritualOnlyForIdeoMembers>
     <ritualBehavior>MATR_AnimaTreeNaturalBlessingBestowal</ritualBehavior>
     <ritualTargetFilter>SelectedThing</ritualTargetFilter>
-    <ritualObligationTargetFilter>MATR_AnimaTree_Alt</ritualObligationTargetFilter>
+    <ritualObligationTargetFilter>MATR_AnimaTreeNaturalBlessingBestowal</ritualObligationTargetFilter>
     <ritualOutcomeEffect>MATR_AnimaTreeNaturalBlessingBestowal</ritualOutcomeEffect>
     <playsIdeoMusic>false</playsIdeoMusic>
     <alwaysStartAnytime>true</alwaysStartAnytime>
