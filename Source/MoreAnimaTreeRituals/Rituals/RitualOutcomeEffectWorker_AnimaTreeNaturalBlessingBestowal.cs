@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using MoreAnimaTreeRituals.Defs;
+using MoreAnimaTreeRituals.Effects;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace MoreAnimaTreeRituals.Rituals
@@ -30,6 +32,8 @@ namespace MoreAnimaTreeRituals.Rituals
                 pawn.health.AddHediff(MATR_HediffDefOf.MATR_AnimaTreeNaturalBlessing);
 				letterDef = LetterDefOf.RitualOutcomePositive;
 				text += "MATR.LetterTextAnimaTreeNaturalBlessingBestowalPositive".Translate(pawn.Named("PAWN"));
+				FleckEffects.GreenGlowEffect(pawn);
+				FleckEffects.SpawnLeaves(pawn);
             } 
 			else
 			{
