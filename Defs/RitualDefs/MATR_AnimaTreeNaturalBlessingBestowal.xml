@@ -16,7 +16,7 @@
         <required>true</required>
         <maxCount>1</maxCount>
         <defaultForSelectedColonist>true</defaultForSelectedColonist>
-        <noCandidatesGizmoDesc>Need a colonist that is not psychically deaf.</noCandidatesGizmoDesc>
+        <noCandidatesGizmoDesc>Need a colonist that is not psychically deaf and have no natural blessing.</noCandidatesGizmoDesc>
         <allowChild>false</allowChild>
         <customChildDisallowMessage>Only adults can be granted a blessing from the anima tree.</customChildDisallowMessage>
       </li>
