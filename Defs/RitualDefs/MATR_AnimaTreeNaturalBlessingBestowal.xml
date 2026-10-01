@@ -59,7 +59,7 @@
   <PreceptDef>
     <defName>MATR_AnimaTreeNaturalBlessigBestowal</defName>
     <label>natural blessing bestowal</label>
-    <description>A person will ask for a natural blessing from an anima tree. The blessing requester will meditate in front of the anima tree, and if successful, the requester will be granted a blessing. Otherwise, the requester will have to wait again for another opportunity. Others gather in a circle to watch and add psychic strength to the ritual to increase the chances for a blessing.</description>
+    <description>A colonist will request for a natural blessing from an anima tree. The blessing requester will meditate in front of the anima tree, and if successful, the requester will be granted a blessing. If it is a perfect blessing, then the pawn will not get psychically shocked. Otherwise, the requester will have to wait again for another opportunity. \n\nBeware, the worst outcome for this ritual would result with the anima tree punishing the requester, giving the requester paralytic abasia. \n\nTo increase the chances for a blessing, other colonists that can meditate in nature may gather in a circle to watch and add psychic strength to the ritual. Chances would also be higher if the requester has a high plant skill.</description>
     <issue>Ritual</issue>
     <preceptClass>Precept_Ritual</preceptClass>
     <visible>false</visible>
@@ -122,14 +122,24 @@
     </comps>
     <outcomeChances>
       <li>
+        <label>Punishing</label>
+        <chance>0.05</chance>
+        <positivityIndex>-2</positivityIndex>
+      </li>
+      <li>
         <label>Rejected</label>
-        <chance>0.1</chance>
+        <chance>0.25</chance>
         <positivityIndex>-1</positivityIndex>
       </li>
       <li>
-        <label>Granted</label>
-        <chance>0.9</chance>
+        <label>Successful</label>
+        <chance>0.5</chance>
         <positivityIndex>1</positivityIndex>
+      </li>
+      <li>
+        <label>Perfect</label>
+        <chance>0.2</chance>
+        <positivityIndex>2</positivityIndex>
       </li>
     </outcomeChances>
   </RitualOutcomeEffectDef>
