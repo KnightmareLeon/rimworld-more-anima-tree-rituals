@@ -24,10 +24,8 @@ namespace MoreAnimaTreeRituals.Rituals
 			int num = 1;
 			foreach (Pawn item in ritual.assignments.SpectatorsForReading)
 			{
-				if (ritual.IsParticipating(item))
-				{
-					num++;
-				}
+				if (ritual.IsParticipating(item)) num++;
+				if (MeditationFocusDefOf.Natural.CanPawnUse(item)) num++;
 			}
 			return ProgressPerParticipantCurve.Evaluate(num);
 		}
