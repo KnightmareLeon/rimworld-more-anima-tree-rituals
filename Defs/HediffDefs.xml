@@ -7,6 +7,13 @@
         <allowedMeditationFocusTypes>
             <li>Natural</li>
         </allowedMeditationFocusTypes>
+        <stages>
+            <li>
+                <statOffsets>
+                <PsychicSensitivity>0.1</PsychicSensitivity>
+                </statOffsets>
+            </li>
+        </stages>
         <duplicationAllowed>false</duplicationAllowed>
     </HediffDef>
 </Defs>
