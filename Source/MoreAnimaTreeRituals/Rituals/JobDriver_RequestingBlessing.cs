@@ -3,6 +3,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.AI;
+using Verse.AI.Group;
 using Verse.Sound;
 
 namespace MoreAnimaTreeRituals.Rituals
@@ -36,7 +37,7 @@ namespace MoreAnimaTreeRituals.Rituals
 				yield break;
 			}
 			yield return Toils_Goto.GotoCell(TargetIndex.B, PathEndMode.OnCell);
-			Toil toil = Toils_General.Wait(15000);
+			Toil toil = Toils_General.Wait(RequestingTimeTicks);
 			toil.tickIntervalAction = delegate(int delta)
 			{
 				pawn.rotationTracker.FaceTarget(BlessingGrantorThing);
