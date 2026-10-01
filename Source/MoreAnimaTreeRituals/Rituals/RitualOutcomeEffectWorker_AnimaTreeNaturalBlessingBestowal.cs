@@ -47,6 +47,7 @@ namespace MoreAnimaTreeRituals.Rituals
 				text = "MATR.LetterTextAnimaTreeNaturalBlessingBestowalNegative".Translate(pawn.Named("PAWN"));
 				if(outcome == def.WorstOutcome)
 				{
+					FleckEffects.GreenGlowEffect(pawn);
 					pawn.health.AddHediff(HediffDefOf.Abasia);
 					text = "MATR.LetterTextAnimaTreeNaturalBlessingBestowalWorst".Translate(pawn.Named("PAWN"));
 				}
