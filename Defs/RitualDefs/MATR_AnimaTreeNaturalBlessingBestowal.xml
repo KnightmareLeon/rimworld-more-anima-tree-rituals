@@ -125,21 +125,25 @@
         <label>Punishing</label>
         <chance>0.05</chance>
         <positivityIndex>-2</positivityIndex>
+        <memory>MATR_PunishingAnimaTreeNaturalBlessingBestowal</memory>
       </li>
       <li>
         <label>Rejected</label>
         <chance>0.25</chance>
         <positivityIndex>-1</positivityIndex>
+        <memory>MATR_RejectedAnimaTreeNaturalBlessingBestowal</memory>
       </li>
       <li>
         <label>Successful</label>
         <chance>0.5</chance>
         <positivityIndex>1</positivityIndex>
+        <memory>MATR_SuccessfulAnimaTreeNaturalBlessingBestowal</memory>
       </li>
       <li>
         <label>Perfect</label>
         <chance>0.2</chance>
         <positivityIndex>2</positivityIndex>
+        <memory>MATR_PerferctAnimaTreeNaturalBlessingBestowal</memory>
       </li>
     </outcomeChances>
   </RitualOutcomeEffectDef>
