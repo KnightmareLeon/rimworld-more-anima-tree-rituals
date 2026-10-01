@@ -26,22 +26,33 @@ namespace MoreAnimaTreeRituals.Rituals
 			float quality = GetQuality(jobRitual, progress);
 			Pawn pawn = jobRitual.PawnWithRole("organizer");
             RitualOutcomePossibility outcome = GetOutcome(quality, jobRitual);
-			LetterDef letterDef; string text = "";
+			TaggedString outcomeText = "\n\n" + OutcomeQualityBreakdownDesc(quality, progress, jobRitual);
+			LetterDef letterDef; string text;
             if(outcome.Positive)
             {
                 pawn.health.AddHediff(MATR_HediffDefOf.MATR_AnimaTreeNaturalBlessing);
 				letterDef = LetterDefOf.RitualOutcomePositive;
-				text += "MATR.LetterTextAnimaTreeNaturalBlessingBestowalPositive".Translate(pawn.Named("PAWN"));
+				text = "MATR.LetterTextAnimaTreeNaturalBlessingBestowalPositive".Translate(pawn.Named("PAWN"));
 				FleckEffects.GreenGlowEffect(pawn);
 				FleckEffects.SpawnLeaves(pawn);
+				if(outcome != def.BestOutcome)
+				{
+					pawn.health.AddHediff(HediffDefOf.PsychicShock);
+					text = "MATR.LetterTextAnimaTreeNaturalBlessingBestowalNotBest".Translate(pawn.Named("PAWN"));
+				}
             } 
 			else
 			{
 				letterDef = LetterDefOf.RitualOutcomeNegative;
-				text += "MATR.LetterTextAnimaTreeNaturalBlessingBestowalNegative".Translate(pawn.Named("PAWN"));
-            } 
-			text += "\n\n" + OutcomeQualityBreakdownDesc(quality, progress, jobRitual);
-			Find.LetterStack.ReceiveLetter("MATR.LetterLabelAnimaTreeNaturalBlessingBestowalCompleted".Translate(), text, letterDef, new LookTargets(pawn, jobRitual.selectedTarget.Thing));
+				text = "MATR.LetterTextAnimaTreeNaturalBlessingBestowalNegative".Translate(pawn.Named("PAWN"));
+				if(outcome == def.WorstOutcome)
+				{
+					pawn.health.AddHediff(HediffDefOf.Abasia);
+					text = "MATR.LetterTextAnimaTreeNaturalBlessingBestowalWorst".Translate(pawn.Named("PAWN"));
+				}
+            }
+			text += outcomeText;
+			Find.LetterStack.ReceiveLetter("MATR.LetterLabelAnimaTreeNaturalBlessingBestowalCompleted".Translate(outcome.Label), text, letterDef, new LookTargets(pawn, jobRitual.selectedTarget.Thing));
 		}
 	}
 }
