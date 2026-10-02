@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
+  <!--Natural Blessing Bestowal-->
   <RitualObligationTargetFilterDef>
     <defName>MATR_AnimaTreeNaturalBlessingBestowal</defName>
     <workerClass>MoreAnimaTreeRituals.Rituals.RitualObligationTargetWorker_AnimaTreeNaturalBlessingBestowal</workerClass>
@@ -147,4 +149,5 @@
       </li>
     </outcomeChances>
   </RitualOutcomeEffectDef>
+
 </Defs>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--Anima Soothe Conjuration-->
+  <RitualObligationTargetFilterDef>
+    <defName>MATR_AnimaTreeSootheConjuration</defName>
+    <workerClass>MoreAnimaTreeRituals.Rituals.RitualObligationTargetWorker_AnimaTreeSootheConjuration</workerClass>
+  </RitualObligationTargetFilterDef>
+
+  <RitualBehaviorDef>
+    <defName>MATR_AnimaTreeSootheConjuration</defName>
+    <durationTicks>15000</durationTicks>
+    <workerClass>MoreAnimaTreeRituals.Rituals.RitualBehaviorWorker_AnimaTreeSootheConjuration</workerClass>
+    <roles>
+      <li Class="MoreAnimaTreeRituals.Rituals.RitualRole_AnimaTreeSootheConjurer">
+        <label>conjurer</label>
+        <id>organizer</id>
+        <required>true</required>
+        <maxCount>1</maxCount>
+        <defaultForSelectedColonist>true</defaultForSelectedColonist>
+        <noCandidatesGizmoDesc>Need a colonist that is not psychically deaf and has the natural meditation focus type.</noCandidatesGizmoDesc>
+        <allowChild>false</allowChild>
+        <customChildDisallowMessage>Only adults can conjure a soothe from the anima tree.</customChildDisallowMessage>
+      </li>
+    </roles>
+    <spectatorFilter Class="RitualSpectatorFilter_NatureFocus">
+      <description>Must have natural focus type.</description>
+    </spectatorFilter>
+    <spectatorsLabel>Participants</spectatorsLabel>
+    <spectatorGerund>participate</spectatorGerund>
+    <stages>
+      <li Class="MoreAnimaTreeRituals.Rituals.RitualStage_AnimaTreeSootheConjuration">
+        <defaultDuty>LinkWithAnimaTreeSecondary</defaultDuty>
+        <endTriggers>
+          <li Class="StageEndTrigger_DurationPercentage">
+            <percentage>1</percentage>
+          </li>
+        </endTriggers>
+        <spectateDistanceOverride>3~4</spectateDistanceOverride>
+        <roleBehaviors>
+          <li>
+            <roleId>organizer</roleId>
+            <dutyDef>MATR_ConjuringAnimaSoothe</dutyDef>
+            <customPositions>
+              <li Class="RitualPosition_AnimaLinkingSpot" />
+            </customPositions>
+          </li>
+        </roleBehaviors>
+      </li>
+    </stages>
+  </RitualBehaviorDef>
+
+  <RitualPatternDef>
+    <defName>MATR_AnimaTreeSootheConjuration</defName>
+    <ritualOnlyForIdeoMembers>false</ritualOnlyForIdeoMembers>
+    <ritualBehavior>MATR_AnimaTreeSootheConjuration</ritualBehavior>
+    <ritualTargetFilter>SelectedThing</ritualTargetFilter>
+    <ritualObligationTargetFilter>MATR_AnimaTreeSootheConjuration</ritualObligationTargetFilter>
+    <ritualOutcomeEffect>MATR_AnimaTreeSootheConjuration</ritualOutcomeEffect>
+    <playsIdeoMusic>false</playsIdeoMusic>
+    <alwaysStartAnytime>true</alwaysStartAnytime>
+  </RitualPatternDef>
+
+  <PreceptDef>
+    <defName>MATR_AnimaTreeSootheConjuration</defName>
+    <label>anima soothe conjuration</label>
+    <description>A colonist will conjure a soothe from the anima tree. If successful, an anima soothe will bring brighten the mood of all colonists in the map. The effect is increased when a colonist has the natural meditation focus type. If the conjuration was done masterfully, then anima grass will grow around the tree based on the ceremony's quality. Otherwise, the anima tree will not do anything.\n\nBeware, in the worst possible outcome, the anima tree might be angry instead. In this case, the tree will cast a psychic anima drone, worsening the moods of colonists, with an even worse effect for colonists with the natural meditation focus type.</description>
+    <issue>Ritual</issue>
+    <preceptClass>Precept_Ritual</preceptClass>
+    <visible>false</visible>
+    <classic>true</classic>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <selectionWeight>1.0</selectionWeight>
+    <ritualPatternBase>MATR_AnimaTreeSootheConjuration</ritualPatternBase>
+    <iconPath>UI/Icons/Rituals/MATR_AnimaTreeNaturalBlessingBestowal</iconPath>
+    <usesIdeoVisualEffects>false</usesIdeoVisualEffects>
+    <mergeRitualGizmosFromAllIdeos>true</mergeRitualGizmosFromAllIdeos>
+    <useRepeatPenalty>true</useRepeatPenalty>
+    <showRitualFloatMenuOption>false</showRitualFloatMenuOption>
+  </PreceptDef>
+
+  <RitualOutcomeEffectDef>
+    <defName>MATR_AnimaTreeSootheConjuration</defName>
+    <workerClass>MoreAnimaTreeRituals.Rituals.RitualOutcomeEffectWorker_AnimaTreeSootheConjuration</workerClass>
+    <warnOnLowQuality>true</warnOnLowQuality>
+    <givesDevelopmentPoints>false</givesDevelopmentPoints>
+    <comps>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>natural participant count</label>
+        <curve>
+          <points>
+            <li>(1, 0.2)</li>
+            <li>(2, 0.35)</li>
+            <li>(4, 0.5)</li>
+            <li>(6, 0.65)</li>
+            <li>(8, 0.8)</li>
+            <li>(10, 0.95)</li>
+            <li>(12, 1)</li>
+          </points>
+        </curve>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <label>Angering</label>
+        <chance>0.05</chance>
+        <positivityIndex>-2</positivityIndex>
+      </li>
+      <li>
+        <label>Rejected</label>
+        <chance>0.25</chance>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <label>Successful</label>
+        <chance>0.5</chance>
+        <positivityIndex>1</positivityIndex>
+      </li>
+      <li>
+        <label>Masterful</label>
+        <chance>0.2</chance>
+        <positivityIndex>2</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+
+</Defs>

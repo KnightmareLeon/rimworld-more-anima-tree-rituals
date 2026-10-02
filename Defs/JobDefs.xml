@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
   <JobDef>
     <defName>MATR_RequestingBlessing</defName>
     <driverClass>MoreAnimaTreeRituals.Rituals.JobDriver_RequestingBlessing</driverClass>
     <reportString>requesting blessing from TargetA</reportString>
     <neverShowWeapon>true</neverShowWeapon>
   </JobDef>
+
+  <JobDef>
+    <defName>MATR_ConjuraAnimaSoothe</defName>
+    <driverClass>MoreAnimaTreeRituals.Rituals.JobDriver_ConjureAnimaSoothe</driverClass>
+    <reportString>conjuring soothe from TargetA</reportString>
+    <neverShowWeapon>true</neverShowWeapon>
+  </JobDef>
+
 </Defs>

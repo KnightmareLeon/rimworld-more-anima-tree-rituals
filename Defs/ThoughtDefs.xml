@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+  <!--Natural blessing bestowal-->
   <ThoughtDef>
     <defName>MATR_PunishingAnimaTreeNaturalBlessingBestowal</defName>
     <thoughtClass>Thought_AttendedRitual</thoughtClass>
@@ -92,6 +93,37 @@
         <label>punished by anima tree</label>
         <description>The anima tree punished me! What did I do to deserve this?</description>
         <baseMoodEffect>-6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!--Anima soothe conjuration-->
+  <ThoughtDef>
+    <defName>MATR_AnimaTreeSootheMoodBoostBase</defName>
+    <durationDays>3.0</durationDays>
+    <stackLimit>3</stackLimit>
+    <effectMultiplyingStat>PsychicSensitivity</effectMultiplyingStat>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>anima soothe feeling</label>
+        <description>I feel calm and relaxed thanks to the anima tree soothe.</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MATR_AnimaTreeSootheMoodBoostNatural</defName>
+    <durationDays>5.0</durationDays>
+    <stackLimit>3</stackLimit>
+    <effectMultiplyingStat>PsychicSensitivity</effectMultiplyingStat>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>anima soothe natural feeling</label>
+        <description>I feel calm, relaxed, and joyful from the anima tree soothe..</description>
+        <baseMoodEffect>25</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>

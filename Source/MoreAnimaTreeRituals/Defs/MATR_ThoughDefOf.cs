@@ -9,6 +9,8 @@ namespace MoreAnimaTreeRituals.Defs
         public static ThoughtDef MATR_ReceivedNaturalBlessing;
         public static ThoughtDef MATR_RejectedNaturalBlessing;
         public static ThoughtDef MATR_PunishedByAnimaTree;
+        public static ThoughtDef MATR_AnimaTreeSootheMoodBoostBase;
+        public static ThoughtDef MATR_AnimaTreeSootheMoodBoostNatural;
 
         static MATR_ThoughtDefOf()
         {
