@@ -7,4 +7,5 @@
     <MATR.LetterLabelAnimaTreeNaturalBlessingBestowalCompleted>{0} Natural Blessing Bestowal</MATR.LetterLabelAnimaTreeNaturalBlessingBestowalCompleted>
     <MATR.RitualRoleAlreadyBlessed>Must be a colonist that has not yet been given a natural blessing from the anima tree.</MATR.RitualRoleAlreadyBlessed>
     <MATR.RitualTargetAnimaTreeCannotBeUsedByColonistsForNaturalBlessingBestowal>Anima tree cannot be requested for a natural blessing. There must be at least one non-psychically deaf, adult colonist who does not yet have a natural blessing.</MATR.RitualTargetAnimaTreeCannotBeUsedByColonistsForNaturalBlessingBestowal> 
+    <MATR.AnimaSootheConjurationExplanationBase>The anima soothe conjuration has more chances to be successful with more participants. The more people participate, the less time the ceremony takes, and the more anima grass will grow.\n\nWith {0} additional participants, {1} anima grass will be restored at the end of the conjuration. However, this is only if the conjuration is successful, otherwise no anima grass will grow back.</MATR.AnimaSootheConjurationExplanationBase>
 </LanguageData>

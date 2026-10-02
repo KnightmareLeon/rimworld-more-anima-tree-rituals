@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
   <DutyDef>
     <defName>MATR_RequestBlessingFromAnimaTree</defName>
     <socialModeMax>Off</socialModeMax>
     <thinkNode Class="ThinkNode_Priority">
       <subNodes>
         <li Class="MoreAnimaTreeRituals.Rituals.JobGiver_RequestBlessing">
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
+    <defName>MATR_ConjuringAnimaSoothe</defName>
+    <socialModeMax>Off</socialModeMax>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="MoreAnimaTreeRituals.Rituals.JobGiver_ConjureAnimaSoothe">
         </li>
       </subNodes>
     </thinkNode>

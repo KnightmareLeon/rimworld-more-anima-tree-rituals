@@ -7,6 +7,7 @@ namespace MoreAnimaTreeRituals.Defs
     public static class MATR_JobDefOf
     {
         public static JobDef MATR_RequestingBlessing;
+        public static JobDef MATR_ConjuraAnimaSoothe;
 
         static MATR_JobDefOf()
         {

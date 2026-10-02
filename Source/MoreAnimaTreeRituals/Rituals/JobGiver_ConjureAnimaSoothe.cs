@@ -5,7 +5,7 @@ using Verse.AI;
 
 namespace MoreAnimaTreeRituals.Rituals
 {
-	public class JobGiver_RequestBlessing : ThinkNode_JobGiver
+	public class JobGiver_ConjureAnimaSoothe : ThinkNode_JobGiver
 	{
 		protected override Job TryGiveJob(Pawn pawn)
 		{
@@ -17,7 +17,9 @@ namespace MoreAnimaTreeRituals.Rituals
 			if (!pawn.Map.reservationManager.CanReserve(pawn, duty.focusSecond.Thing)) return null;
 			CompPsylinkable compPsylinkable = duty.focusSecond.Thing?.TryGetComp<CompPsylinkable>();
 			if (!compPsylinkable.TryFindLinkSpot(pawn, out LocalTargetInfo spot)) return null;
-			return JobMaker.MakeJob(MATR_JobDefOf.MATR_RequestingBlessing, duty.focusSecond, duty.focus);
+			if (compPsylinkable.CompSubplant.SubplantsForReading.Count < 15) return null;
+            if (!MeditationFocusDefOf.Natural.CanPawnUse(pawn)) return null;
+            return JobMaker.MakeJob(MATR_JobDefOf.MATR_ConjuraAnimaSoothe, duty.focusSecond, duty.focus);
 		}
 	}
 }

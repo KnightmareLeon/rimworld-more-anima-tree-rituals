@@ -8,22 +8,22 @@ using Verse.Sound;
 
 namespace MoreAnimaTreeRituals.Rituals
 {
-	public class JobDriver_RequestingBlessing : JobDriver
+	public class JobDriver_ConjureAnimaSoothe : JobDriver
 	{
-		public const int RequestingTimeTicks = 20000;
+		public const int ConjuringTimeTicks = 15000;
 
 		public const int EffectsTickInterval = 720;
 
-		protected const TargetIndex BlessingGrantorInd = TargetIndex.A;
+		protected const TargetIndex AnimaSootherInd = TargetIndex.A;
 
-		protected const TargetIndex BlessingRequestSpotInd = TargetIndex.B;
-        private Thing BlessingGrantorThing => TargetA.Thing;
-        private CompPsylinkable Psylinkable => BlessingGrantorThing.TryGetComp<CompPsylinkable>();
+		protected const TargetIndex ConjuringRequestSpotInd = TargetIndex.B;
+        private Thing AnimaTreeThing => TargetA.Thing;
+        private CompPsylinkable Psylinkable => AnimaTreeThing.TryGetComp<CompPsylinkable>();
 		private LocalTargetInfo RequestSpot => job.targetB;
 
 		public override bool TryMakePreToilReservations(bool errorOnFailed)
 		{
-			if (pawn.Reserve(BlessingGrantorThing, job, 1, -1, null, errorOnFailed))
+			if (pawn.Reserve(AnimaTreeThing, job, 1, -1, null, errorOnFailed))
 			{
 				return pawn.Reserve(RequestSpot, job, 1, -1, null, errorOnFailed);
 			}
@@ -37,16 +37,18 @@ namespace MoreAnimaTreeRituals.Rituals
 				yield break;
 			}
 			yield return Toils_Goto.GotoCell(TargetIndex.B, PathEndMode.OnCell);
-			Toil toil = Toils_General.Wait(RequestingTimeTicks);
+			Toil toil = Toils_General.Wait(ConjuringTimeTicks);
 			toil.tickIntervalAction = delegate(int delta)
 			{
-				pawn.rotationTracker.FaceTarget(BlessingGrantorThing);
+				pawn.rotationTracker.FaceTarget(AnimaTreeThing);
 				if (pawn.IsHashIntervalTick(EffectsTickInterval, delta))
 				{
 					Vector3 vector = pawn.TrueCenter();
-					vector += (BlessingGrantorThing.TrueCenter() - vector) * Rand.Value;
+					vector += (AnimaTreeThing.TrueCenter() - vector) * Rand.Value;
 					FleckMaker.Static(vector, pawn.Map, FleckDefOf.PsycastAreaEffect, 0.5f);
-					Psylinkable.Props.linkSound.PlayOneShot(SoundInfo.InMap(new TargetInfo(BlessingGrantorThing)));
+					FleckMaker.Static(vector, pawn.Map, FleckDefOf.PsycastAreaEffect, 0.2f);
+					FleckMaker.Static(vector, pawn.Map, FleckDefOf.PsycastAreaEffect, 0.3f);
+					Psylinkable.Props.linkSound.PlayOneShot(SoundInfo.InMap(new TargetInfo(AnimaTreeThing)));
 				}
 			};
 			toil.handlingFacing = false;
