@@ -107,8 +107,38 @@
     <stages>
       <li>
         <label>anima soothe feeling</label>
-        <description>I feel calm and relaxed thanks to the anima tree soothe.</description>
+        <description>I feel calm and relaxed from the anima tree soothe.</description>
         <baseMoodEffect>15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MATR_LesserAnimaTreeSootheMoodBoost</defName>
+    <durationDays>3.0</durationDays>
+    <stackLimit>3</stackLimit>
+    <effectMultiplyingStat>PsychicSensitivity</effectMultiplyingStat>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>lesser anima soothe feeling</label>
+        <description>I feel calm from the anima tree soothe.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MATR_LesserAnimaTreeSootheMoodBoostNatural</defName>
+    <durationDays>3.0</durationDays>
+    <stackLimit>3</stackLimit>
+    <effectMultiplyingStat>PsychicSensitivity</effectMultiplyingStat>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>lesser anima soothe natural feeling</label>
+        <description>I feel calm from the anima tree soothe. I can somewhat feel nature soothing me.</description>
+        <baseMoodEffect>10</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>
@@ -122,7 +152,7 @@
     <stages>
       <li>
         <label>anima soothe natural feeling</label>
-        <description>I feel calm, relaxed, and joyful from the anima tree soothe..</description>
+        <description>I feel calm and relaxed from the anima tree soothe. I can feel the nature around me healing my soul.</description>
         <baseMoodEffect>25</baseMoodEffect>
       </li>
     </stages>
