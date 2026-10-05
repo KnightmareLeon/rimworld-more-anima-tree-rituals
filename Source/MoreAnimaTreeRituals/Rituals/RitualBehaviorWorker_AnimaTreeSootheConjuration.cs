@@ -1,9 +1,9 @@
 using System.Linq;
-using MoreAnimaTreeRituals.Rituals;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
-namespace RimWorld
+namespace MoreAnimaTreeRituals.Rituals
 {
 	public class RitualBehaviorWorker_AnimaTreeSootheConjuration : RitualBehaviorWorker
 	{
