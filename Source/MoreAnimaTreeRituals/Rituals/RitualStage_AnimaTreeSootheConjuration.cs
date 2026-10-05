@@ -3,7 +3,7 @@ using Verse;
 
 namespace MoreAnimaTreeRituals.Rituals
 {
-	public class RitualStage_AnimaTreeSootheRitual : RitualStage
+	public class RitualStage_AnimaTreeSootheConjuration : RitualStage
 	{
 		public static readonly SimpleCurve ProgressPerParticipantCurve = new SimpleCurve
 		{
