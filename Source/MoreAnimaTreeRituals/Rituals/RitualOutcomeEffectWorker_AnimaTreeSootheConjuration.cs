@@ -3,7 +3,6 @@ using System.Linq;
 using MoreAnimaTreeRituals.Defs;
 using MoreAnimaTreeRituals.Effects;
 using RimWorld;
-using UnityEngine;
 using Verse;
 using Verse.Sound;
 
@@ -37,38 +36,51 @@ namespace MoreAnimaTreeRituals.Rituals
 			Pawn organizer = jobRitual.PawnWithRole("organizer");
             RitualOutcomePossibility outcome = GetOutcome(quality, jobRitual);
 			string outcomeText = "\n\n" + OutcomeQualityBreakdownDesc(quality, progress, jobRitual);
-			LetterDef letterDef; string text;
+			string text = "MATR.AnimaSootheConjurationCompletionBase".Translate();
 			CompPsylinkable obj = jobRitual.selectedTarget.Thing?.TryGetComp<CompPsylinkable>();
-			if(outcome.Positive)
+			
+			AnimaSoothe(outcome, organizer, obj);	
+			
+			int grassDestroyed = 15;
+			if(outcome == def.BestOutcome)
 			{
-				Find.CameraDriver.shaker.DoShake(1f);
-				FleckMaker.Static(obj.parent.Position, organizer.Map, FleckDefOf.PsycastAreaEffect, 10f);
-				SoundDefOf.PsycastPsychicPulse.PlayOneShot(new TargetInfo(obj.parent));
-				foreach(Pawn pawn in organizer.MapHeld.mapPawns.FreeColonistsSpawned)
-				{
-					pawn.needs.mood.thoughts.memories.TryGainMemory(
-						MeditationFocusDefOf.Natural.CanPawnUse(pawn) ?
-						MATR_ThoughtDefOf.MATR_AnimaTreeSootheMoodBoostNatural :
-						MATR_ThoughtDefOf.MATR_AnimaTreeSootheMoodBoostBase
-					);
-				}
-				if(outcome == def.BestOutcome)
-				{
-					int num = 15 - (int)RestoredGrassFromQuality.Evaluate(quality);
-					List<Thing> list = obj.CompSubplant.SubplantsForReading.OrderByDescending((Thing p) => p.Position.DistanceTo(obj.parent.Position)).ToList();
-					for (int num2 = 0; num2 < num && num2 < list.Count; num2++)
-					{
-						list[num2].Destroy();
-					}
-					obj.CompSubplant.Cleanup();
-				}
-			}
-			else
-			{
-				
+				grassDestroyed -= (int)RestoredGrassFromQuality.Evaluate(quality);
+
+				text += "\n\n" + "MATR.AnimaSootheConjurationCompletionMasterful".Translate();
 			}
 
+			if(!outcome.Positive) text += "\n\n" + "MATR.AnimaSootheConjurationCompletionNegative".Translate();
+			
+			if(outcome == def.WorstOutcome)
+			{
+				FleckEffects.GreenGlowEffect(organizer);
+				organizer.health.AddHediff(HediffDefOf.PsychicShock);
+				text += " " + "MATR.AnimaSootheConjurationCompletionWorst".Translate();
+			}
 
+			List<Thing> list = obj.CompSubplant.SubplantsForReading.OrderByDescending((Thing p) => p.Position.DistanceTo(obj.parent.Position)).ToList();
+			for (int num = 0; num < grassDestroyed && num < list.Count; num++)
+			{
+				list[num].Destroy();
+			}
+			obj.CompSubplant.Cleanup();
+			text += outcomeText;
+			Find.LetterStack.ReceiveLetter("MATR.LetterLabelAnimaSootheConjurationCompleted".Translate(outcome.Label), text, LetterDefOf.RitualOutcomePositive, new LookTargets(organizer, jobRitual.selectedTarget.Thing));
+		}
+
+		private void AnimaSoothe(RitualOutcomePossibility outcome, Pawn organizer, CompPsylinkable obj)
+		{
+			ThoughtDef naturalThought = outcome.Positive ? MATR_ThoughtDefOf.MATR_AnimaTreeSootheMoodBoostNatural : MATR_ThoughtDefOf.MATR_LesserAnimaTreeSootheMoodBoostNatural;
+			ThoughtDef baseThought = outcome.Positive ? MATR_ThoughtDefOf.MATR_AnimaTreeSootheMoodBoostBase : MATR_ThoughtDefOf.MATR_LesserAnimaTreeSootheMoodBoost;
+			Find.CameraDriver.shaker.DoShake(1f);
+			FleckMaker.Static(obj.parent.Position, organizer.Map, FleckDefOf.PsycastAreaEffect, 10f);
+			SoundDefOf.PsycastPsychicPulse.PlayOneShot(new TargetInfo(obj.parent));
+			foreach(Pawn pawn in organizer.MapHeld.mapPawns.FreeColonistsSpawned)
+			{
+				pawn.needs.mood.thoughts.memories.TryGainMemory(
+					MeditationFocusDefOf.Natural.CanPawnUse(pawn) ?naturalThought :baseThought
+				);
+			}
         }
 	}
 }
