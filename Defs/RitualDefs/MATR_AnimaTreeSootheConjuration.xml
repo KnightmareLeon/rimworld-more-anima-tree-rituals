@@ -64,7 +64,7 @@
   <PreceptDef>
     <defName>MATR_AnimaTreeSootheConjuration</defName>
     <label>anima soothe conjuration</label>
-    <description>A colonist will conjure a soothe from the anima tree. If successful, an anima soothe will bring brighten the mood of all colonists in the map. The effect is increased when a colonist has the natural meditation focus type. If the conjuration was done masterfully, then anima grass will grow around the tree based on the ceremony's quality. Otherwise, the anima tree will not do anything.\n\nBeware, in the worst possible outcome, the anima tree might be angry instead. In this case, the tree will cast a psychic anima drone, worsening the moods of colonists, with an even worse effect for colonists with the natural meditation focus type.</description>
+    <description>A colonist will conjure a soothe from the anima tree. The soothing effect is heavily dependent on the quality of the conjuration ritual. The more colonists in the ritual, the better the results would be. If done masterfully, anima grass will regrow.</description>
     <issue>Ritual</issue>
     <preceptClass>Precept_Ritual</preceptClass>
     <visible>false</visible>
@@ -102,12 +102,12 @@
     </comps>
     <outcomeChances>
       <li>
-        <label>Angering</label>
+        <label>Shockingly Successful</label>
         <chance>0.05</chance>
         <positivityIndex>-2</positivityIndex>
       </li>
       <li>
-        <label>Rejected</label>
+        <label>Quite Successful</label>
         <chance>0.25</chance>
         <positivityIndex>-1</positivityIndex>
       </li>
