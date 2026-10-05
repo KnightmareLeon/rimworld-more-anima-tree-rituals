@@ -16,12 +16,6 @@ namespace MoreAnimaTreeRituals.Rituals
 				return false;
 			}
 
-			if (p.health.hediffSet.HasHediff(MATR_HediffDefOf.MATR_AnimaTreeNaturalBlessing))
-			{
-				if (!skipReason) reason = "MATR.RitualRoleAlreadyBlessed".Translate();
-				return false;
-			}
-
 			if (ritual != null)
 			{
 				if (p == ritual.Organizer) return true;
