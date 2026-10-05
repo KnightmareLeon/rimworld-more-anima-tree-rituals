@@ -35,7 +35,7 @@ namespace MoreAnimaTreeRituals.Rituals
 		public override string ExpectedDuration(Precept_Ritual ritual, RitualRoleAssignments assignments, float quality)
 		{
 			int count = assignments.SpectatorsForReading.Count;
-			return Mathf.RoundToInt((float)ritual.behavior.def.durationTicks.max / RitualStage_AnimaTreeLinking.ProgressPerParticipantCurve.Evaluate(count + 1)).ToStringTicksToPeriod(allowSeconds: false);
+			return Mathf.RoundToInt(ritual.behavior.def.durationTicks.max / RitualStage_AnimaTreeLinking.ProgressPerParticipantCurve.Evaluate(count + 1)).ToStringTicksToPeriod(allowSeconds: false);
 		}
 	}
 }
