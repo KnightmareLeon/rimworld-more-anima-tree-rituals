@@ -86,7 +86,7 @@
     <givesDevelopmentPoints>false</givesDevelopmentPoints>
     <comps>
       <li Class="RitualOutcomeComp_ParticipantCount">
-        <label>natural participant count</label>
+        <label>participant count</label>
         <curve>
           <points>
             <li>(1, 0.2)</li>
