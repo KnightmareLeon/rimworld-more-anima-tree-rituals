@@ -72,7 +72,7 @@
     <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
     <selectionWeight>1.0</selectionWeight>
     <ritualPatternBase>MATR_AnimaTreeSootheConjuration</ritualPatternBase>
-    <iconPath>UI/Icons/Rituals/MATR_AnimaTreeNaturalBlessingBestowal</iconPath>
+    <iconPath>UI/Icons/Rituals/MATR_AnimaSootheConjuration</iconPath>
     <usesIdeoVisualEffects>false</usesIdeoVisualEffects>
     <mergeRitualGizmosFromAllIdeos>true</mergeRitualGizmosFromAllIdeos>
     <useRepeatPenalty>true</useRepeatPenalty>
