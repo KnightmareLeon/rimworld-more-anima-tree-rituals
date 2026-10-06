@@ -4,41 +4,20 @@ using Verse;
 
 namespace MoreAnimaTreeRituals.Rituals
 {
-	public class RitualRole_AnimaTreeSootheConjurer : RitualRole
+	public class RitualRole_AnimaTreeSootheConjurer : RitualRole_AnimaTreeOrganizerBase
 	{
 		public override bool AppliesToPawn(Pawn p, out string reason, TargetInfo selectedTarget, LordJob_Ritual ritual = null, RitualRoleAssignments assignments = null, Precept_Ritual precept = null, bool skipReason = false)
 		{
-			if (!AppliesIfChild(p, out reason, skipReason)) return false;
+			bool baseRes = base.AppliesToPawn(p, out reason, selectedTarget, ritual: ritual, assignments: assignments, skipReason: skipReason);
 
-			if (!p.Faction.IsPlayerSafe())
-			{
-				if (!skipReason) reason = "MessageRitualRoleMustBeColonist".Translate(Label);
-				return false;
-			}
+			if(!baseRes) return baseRes;
 
-			if (ritual != null)
-			{
-				if (p == ritual.Organizer) return true;
-			}
-			else if (assignments != null && assignments.Required(p)) return true;
-
-			if (!p.psychicEntropy.IsPsychicallySensitive)
-			{
-				if (!skipReason) reason = "RitualTargetAnimaTreeMustBePsychicallySensitive".Translate();
-				return false;
-			}
             if (!MeditationFocusDefOf.Natural.CanPawnUse(p))
 			{
 				if (!skipReason) reason = "RitualTargetAnimaTreeMustBeCapableOfNature".Translate();
 				return false;
 			}
 			return true;
-		}
-
-		public override bool AppliesToRole(Precept_Role role, out string reason, Precept_Ritual ritual = null, Pawn p = null, bool skipReason = false)
-		{
-			reason = null;
-			return false;
 		}
 	}
 }
