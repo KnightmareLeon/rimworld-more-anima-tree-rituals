@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
-    <MATR.LetterTextAnimaTreeNaturalBlessingBestowalPositive>{PAWN_labelShort} has successfully requested for a natural blessing from the anima tree without any negative consequences. {PAWN_pronoun} can now meditate in nature and link with the anima tree to get psychic powers.</MATR.LetterTextAnimaTreeNaturalBlessingBestowalPositive>
-    <MATR.LetterTextAnimaTreeNaturalBlessingBestowalNotBest>{PAWN_labelShort} has successfully requested for a natural blessing from the anima tree. {PAWN_pronoun} can now meditate in nature and link with the anima tree to get psychic powers. However, {PAWN_labelShort} was not able to take the blessing properly. {PAWN_pronoun} was psychically shocked.</MATR.LetterTextAnimaTreeNaturalBlessingBestowalNotBest>
-    <MATR.LetterTextAnimaTreeNaturalBlessingBestowalNegative>Regrettably, the anima tree has rejected {PAWN_labelShort}'s request for a natural blessing. {PAWN_pronoun} must wait for 20 days to get the highest chances possible to get a natural blessing.</MATR.LetterTextAnimaTreeNaturalBlessingBestowalNegative>
-    <MATR.LetterTextAnimaTreeNaturalBlessingBestowalWorst>Not only has the anima tree rejected {PAWN_labelShort}, the anima tree has also given a punishment. {PAWN_labelShort} now has paralytic abasia.</MATR.LetterTextAnimaTreeNaturalBlessingBestowalWorst>
-    <MATR.LetterLabelAnimaTreeNaturalBlessingBestowalCompleted>{0} Natural Blessing Bestowal</MATR.LetterLabelAnimaTreeNaturalBlessingBestowalCompleted>
-    <MATR.RitualRoleAlreadyBlessed>Must be a colonist that has not yet been given a natural blessing from the anima tree.</MATR.RitualRoleAlreadyBlessed>
-    <MATR.RitualTargetAnimaTreeCannotBeUsedByColonistsForNaturalBlessingBestowal>Anima tree cannot be requested for a natural blessing. There must be at least one non-psychically deaf, adult colonist who does not yet have a natural blessing.</MATR.RitualTargetAnimaTreeCannotBeUsedByColonistsForNaturalBlessingBestowal> 
+  <!--Natural Blessing Bestowal-->
+  <MATR.LetterTextAnimaTreeNaturalBlessingBestowalPositive>{PAWN_labelShort} has successfully requested for a natural blessing from the anima tree without any negative consequences. {PAWN_pronoun} can now meditate in nature and link with the anima tree to get psychic powers.</MATR.LetterTextAnimaTreeNaturalBlessingBestowalPositive>
+  <MATR.LetterTextAnimaTreeNaturalBlessingBestowalNotBest>{PAWN_labelShort} has successfully requested for a natural blessing from the anima tree. {PAWN_pronoun} can now meditate in nature and link with the anima tree to get psychic powers. However, {PAWN_labelShort} was not able to take the blessing properly. {PAWN_pronoun} was psychically shocked.</MATR.LetterTextAnimaTreeNaturalBlessingBestowalNotBest>
+  <MATR.LetterTextAnimaTreeNaturalBlessingBestowalNegative>Regrettably, the anima tree has rejected {PAWN_labelShort}'s request for a natural blessing. {PAWN_pronoun} must wait for 20 days to get the highest chances possible to get a natural blessing.</MATR.LetterTextAnimaTreeNaturalBlessingBestowalNegative>
+  <MATR.LetterTextAnimaTreeNaturalBlessingBestowalWorst>Not only has the anima tree rejected {PAWN_labelShort}, the anima tree has also given a punishment. {PAWN_labelShort} now has paralytic abasia.</MATR.LetterTextAnimaTreeNaturalBlessingBestowalWorst>
+  <MATR.LetterLabelAnimaTreeNaturalBlessingBestowalCompleted>{0} Natural Blessing Bestowal</MATR.LetterLabelAnimaTreeNaturalBlessingBestowalCompleted>
+  <MATR.RitualRoleAlreadyNaturalBlessed>Must be a colonist that has not yet been given a natural blessing from the anima tree.</MATR.RitualRoleAlreadyNaturalBlessed>
+  <MATR.RitualTargetAnimaTreeCannotBeUsedByColonistsForNaturalBlessingBestowal>Anima tree cannot be requested for a natural blessing. There must be at least one non-psychically deaf, adult colonist who does not yet have a natural blessing.</MATR.RitualTargetAnimaTreeCannotBeUsedByColonistsForNaturalBlessingBestowal> 
 
-    <MATR.AnimaSootheConjurationExplanationBase>The anima soothe conjuration ritual's soothing effect strength is based on its outcome. To get higher chances to get the best outcomes, the rituals should have more participants.\n\nWith {0} additional participants, {1} anima grass will be restored at the end of the conjuration if done masterfully.</MATR.AnimaSootheConjurationExplanationBase>
-    <MATR.AnimaSootheConjurationCompletionBase>The anima soothe conjuration was successfully done. Everyone in the surrounding region will feel the soothing effect from the ritual.</MATR.AnimaSootheConjurationCompletionBase>
-    <MATR.AnimaSootheConjurationCompletionMasterful>Since the ritual was done masterfully, anima grass will regrow based on the ritual's quality.</MATR.AnimaSootheConjurationCompletionMasterful>
-    <MATR.AnimaSootheConjurationCompletionNegative>However, something went wrong with the conjuration ritual. As a result, the soothing effect is not as strong as it should be.</MATR.AnimaSootheConjurationCompletionNegative>
-    <MATR.AnimaSootheConjurationCompletionWorst>Even worse, the ritual's organizing conjurer was psychically shocked and will need some time to recover.</MATR.AnimaSootheConjurationCompletionWorst>
-    <MATR.LetterLabelAnimaSootheConjurationCompleted>{0} Anima Soothe Conjuration</MATR.LetterLabelAnimaSootheConjurationCompleted>
+  <!--Anima Soothe Conjuration-->
+  <MATR.AnimaSootheConjurationExplanationBase>The anima soothe conjuration ritual's soothing effect strength is based on its outcome. To get higher chances to get the best outcomes, the rituals should have more participants.\n\nWith {0} additional participants, {1} anima grass will be restored at the end of the conjuration if done masterfully.</MATR.AnimaSootheConjurationExplanationBase>
+  <MATR.AnimaSootheConjurationCompletionBase>The anima soothe conjuration was successfully done. Everyone in the surrounding region will feel the soothing effect from the ritual.</MATR.AnimaSootheConjurationCompletionBase>
+  <MATR.AnimaSootheConjurationCompletionMasterful>Since the ritual was done masterfully, anima grass will regrow based on the ritual's quality.</MATR.AnimaSootheConjurationCompletionMasterful>
+  <MATR.AnimaSootheConjurationCompletionNegative>However, something went wrong with the conjuration ritual. As a result, the soothing effect is not as strong as it should be.</MATR.AnimaSootheConjurationCompletionNegative>
+  <MATR.AnimaSootheConjurationCompletionWorst>Even worse, the ritual's organizing conjurer was psychically shocked and will need some time to recover.</MATR.AnimaSootheConjurationCompletionWorst>
+  <MATR.LetterLabelAnimaSootheConjurationCompleted>{0} Anima Soothe Conjuration</MATR.LetterLabelAnimaSootheConjurationCompleted>
+
+  <!--Psywielder Blessing Bestowal-->
+  <MATR.RitualTargetAnimaTreeAllHavePsywielderBlessing></MATR.RitualTargetAnimaTreeAllHavePsywielderBlessing>
+  <MATR.RitualRoleAlreadyPsywielderBlessed></MATR.RitualRoleAlreadyPsywielderBlessed>
+  <MATR.LetterTextAnimaPsywielderBlessingBestowalCompleted></MATR.LetterTextAnimaPsywielderBlessingBestowalCompleted>
+  <MATR.LetterLabelAnimaPsywielderBlessingBestowalCompleted></MATR.LetterLabelAnimaPsywielderBlessingBestowalCompleted>
+
+  <!--General-->
+  <MATR.LetterTextRitualCompletedAnimaGrass>A total of {0} anima grass was restored.</MATR.LetterTextRitualCompletedAnimaGrass>
 </LanguageData>

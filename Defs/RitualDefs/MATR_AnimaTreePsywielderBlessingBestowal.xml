@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-  <!--Anima Soothe Conjuration-->
+  <!--Anima Psywielder Blessing Bestowal-->
   <RitualObligationTargetFilterDef>
-    <defName>MATR_AnimaTreeSootheConjuration</defName>
-    <workerClass>MoreAnimaTreeRituals.Rituals.RitualObligationTargetWorker_AnimaTreeSootheConjuration</workerClass>
+    <defName>MATR_AnimaTreePsywielderBlessingBestowal</defName>
+    <workerClass>MoreAnimaTreeRituals.Rituals.RitualObligationTargetWorker_MATR_AnimaTreePsywielderBlessingBestowal</workerClass>
   </RitualObligationTargetFilterDef>
 
   <RitualBehaviorDef>
-    <defName>MATR_AnimaTreeSootheConjuration</defName>
-    <durationTicks>15000</durationTicks>
-    <workerClass>MoreAnimaTreeRituals.Rituals.RitualBehaviorWorker_AnimaTreeSootheConjuration</workerClass>
+    <defName>MATR_AnimaTreePsywielderBlessingBestowal</defName>
+    <durationTicks>20000</durationTicks>
+    <workerClass>MoreAnimaTreeRituals.Rituals.RitualBehaviorWorker_AnimaTreePsywielderBlessingBestowal</workerClass>
     <roles>
-      <li Class="MoreAnimaTreeRituals.Rituals.RitualRole_AnimaTreeSootheConjurer">
-        <label>conjurer</label>
+      <li Class="MoreAnimaTreeRituals.Rituals.RitualRole_AnimaTreePsywielderBlessingRequester">
+        <label>requester</label>
         <id>organizer</id>
         <required>true</required>
         <maxCount>1</maxCount>
         <defaultForSelectedColonist>true</defaultForSelectedColonist>
-        <noCandidatesGizmoDesc>Need a colonist that is not psychically deaf and has the natural meditation focus type.</noCandidatesGizmoDesc>
+        <noCandidatesGizmoDesc>Need a colonist that is not psychically deaf and have no psywielder blessing.</noCandidatesGizmoDesc>
         <allowChild>false</allowChild>
-        <customChildDisallowMessage>Only adults can conjure a soothe from the anima tree.</customChildDisallowMessage>
+        <customChildDisallowMessage>Only adults can be granted a blessing from the anima tree.</customChildDisallowMessage>
       </li>
     </roles>
     <spectatorFilter Class="RitualSpectatorFilter_NatureFocus">
@@ -29,7 +28,7 @@
     <spectatorsLabel>Participants</spectatorsLabel>
     <spectatorGerund>participate</spectatorGerund>
     <stages>
-      <li Class="MoreAnimaTreeRituals.Rituals.RitualStage_AnimaTreeSootheConjuration">
+      <li Class="MoreAnimaTreeRituals.Rituals.RitualStage_AnimaTreePsywielderBlessingBestowal.cs">
         <defaultDuty>LinkWithAnimaTreeSecondary</defaultDuty>
         <endTriggers>
           <li Class="StageEndTrigger_DurationPercentage">
@@ -40,7 +39,7 @@
         <roleBehaviors>
           <li>
             <roleId>organizer</roleId>
-            <dutyDef>MATR_ConjuringAnimaSoothe</dutyDef>
+            <dutyDef>MATR_RequestBlessingFromAnimaTree</dutyDef>
             <customPositions>
               <li Class="RitualPosition_AnimaLinkingSpot" />
             </customPositions>
@@ -51,20 +50,20 @@
   </RitualBehaviorDef>
 
   <RitualPatternDef>
-    <defName>MATR_AnimaTreeSootheConjuration</defName>
+    <defName>MATR_AnimaTreePsywielderBlessingBestowal</defName>
     <ritualOnlyForIdeoMembers>false</ritualOnlyForIdeoMembers>
-    <ritualBehavior>MATR_AnimaTreeSootheConjuration</ritualBehavior>
+    <ritualBehavior>MATR_AnimaTreePsywielderBlessingBestowal</ritualBehavior>
     <ritualTargetFilter>SelectedThing</ritualTargetFilter>
-    <ritualObligationTargetFilter>MATR_AnimaTreeSootheConjuration</ritualObligationTargetFilter>
-    <ritualOutcomeEffect>MATR_AnimaTreeSootheConjuration</ritualOutcomeEffect>
+    <ritualObligationTargetFilter>MATR_AnimaTreePsywielderBlessingBestowal</ritualObligationTargetFilter>
+    <ritualOutcomeEffect>MATR_AnimaTreePsywielderBlessingBestowal</ritualOutcomeEffect>
     <playsIdeoMusic>false</playsIdeoMusic>
     <alwaysStartAnytime>true</alwaysStartAnytime>
   </RitualPatternDef>
 
   <PreceptDef>
-    <defName>MATR_AnimaTreeSootheConjuration</defName>
-    <label>anima soothe conjuration</label>
-    <description>A colonist will conjure a soothe from the anima tree. The soothing effect is heavily dependent on the quality of the conjuration ritual. The more colonists in the ritual, the better the results would be. If done masterfully, anima grass will regrow.</description>
+    <defName>MATR_AnimaTreePsywielderBlessingBestowal</defName>
+    <label>psywielder blessing bestowal</label>
+    <description>One person will link request for a psywielder blessing from an anima tree. The requester will meditate in front of the anima tree, granting the requester a psywielder blessing. Others gather in a circle to watch and add psychic strength to the ritual.</description>
     <issue>Ritual</issue>
     <preceptClass>Precept_Ritual</preceptClass>
     <visible>false</visible>
@@ -72,16 +71,16 @@
     <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
     <selectionWeight>1.0</selectionWeight>
     <ritualPatternBase>MATR_AnimaTreeSootheConjuration</ritualPatternBase>
-    <iconPath>UI/Icons/Rituals/MATR_AnimaSootheConjuration</iconPath>
+    <iconPath>UI/Icons/Rituals/MATR_AnimaTreeNaturalBlessingBestowal</iconPath>
     <usesIdeoVisualEffects>false</usesIdeoVisualEffects>
     <mergeRitualGizmosFromAllIdeos>true</mergeRitualGizmosFromAllIdeos>
-    <useRepeatPenalty>true</useRepeatPenalty>
+    <useRepeatPenalty>false</useRepeatPenalty>
     <showRitualFloatMenuOption>false</showRitualFloatMenuOption>
   </PreceptDef>
 
   <RitualOutcomeEffectDef>
-    <defName>MATR_AnimaTreeSootheConjuration</defName>
-    <workerClass>MoreAnimaTreeRituals.Rituals.RitualOutcomeEffectWorker_AnimaTreeSootheConjuration</workerClass>
+    <defName>MATR_AnimaTreePsywielderBlessingBestowal</defName>
+    <workerClass>MoreAnimaTreeRituals.Rituals.RitualOutcomeEffectWorker_AnimaTreePsywielderBlessingBestowal</workerClass>
     <warnOnLowQuality>true</warnOnLowQuality>
     <givesDevelopmentPoints>false</givesDevelopmentPoints>
     <comps>
@@ -100,28 +99,5 @@
         </curve>
       </li>
     </comps>
-    <outcomeChances>
-      <li>
-        <label>Shockingly Successful</label>
-        <chance>0.05</chance>
-        <positivityIndex>-2</positivityIndex>
-      </li>
-      <li>
-        <label>Quite Successful</label>
-        <chance>0.25</chance>
-        <positivityIndex>-1</positivityIndex>
-      </li>
-      <li>
-        <label>Successful</label>
-        <chance>0.5</chance>
-        <positivityIndex>1</positivityIndex>
-      </li>
-      <li>
-        <label>Masterful</label>
-        <chance>0.2</chance>
-        <positivityIndex>2</positivityIndex>
-      </li>
-    </outcomeChances>
   </RitualOutcomeEffectDef>
-
 </Defs>

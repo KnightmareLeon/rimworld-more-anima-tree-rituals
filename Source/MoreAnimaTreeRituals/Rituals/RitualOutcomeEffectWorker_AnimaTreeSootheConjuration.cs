@@ -44,9 +44,11 @@ namespace MoreAnimaTreeRituals.Rituals
 			int grassDestroyed = 15;
 			if(outcome == def.BestOutcome)
 			{
-				grassDestroyed -= (int)RestoredGrassFromQuality.Evaluate(quality);
+				int grassRestored = (int)RestoredGrassFromQuality.Evaluate(quality);
+				grassDestroyed -= grassRestored;
 
 				text += "\n\n" + "MATR.AnimaSootheConjurationCompletionMasterful".Translate();
+				if (grassRestored > 0) text += " " + "MATR.LetterTextRitualCompletedAnimaGrass".Translate(grassRestored);
 			}
 
 			if(!outcome.Positive) text += "\n\n" + "MATR.AnimaSootheConjurationCompletionNegative".Translate();
@@ -58,7 +60,7 @@ namespace MoreAnimaTreeRituals.Rituals
 				text += " " + "MATR.AnimaSootheConjurationCompletionWorst".Translate();
 			}
 
-			List<Thing> list = obj.CompSubplant.SubplantsForReading.OrderByDescending((Thing p) => p.Position.DistanceTo(obj.parent.Position)).ToList();
+			List<Thing> list = obj.CompSubplant.SubplantsForReading.OrderByDescending(p => p.Position.DistanceTo(obj.parent.Position)).ToList();
 			for (int num = 0; num < grassDestroyed && num < list.Count; num++)
 			{
 				list[num].Destroy();
