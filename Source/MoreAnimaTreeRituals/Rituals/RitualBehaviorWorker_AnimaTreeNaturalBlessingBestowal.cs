@@ -18,7 +18,10 @@ namespace MoreAnimaTreeRituals.Rituals
 
 		public override string GetExplanation(Precept_Ritual ritual, RitualRoleAssignments assignments, float quality)
 		{
-			TaggedString taggedString = "";
+			int spectatorCount = assignments.SpectatorsForReading.Count ;
+			int naturalSpectators = 0;
+			foreach(Pawn p in assignments.SpectatorsForReading) if (MeditationFocusDefOf.Natural.CanPawnUse(p)) naturalSpectators++;
+			TaggedString taggedString = "MATR.AnimaTreeNaturalBlessingBestowalnExplanationBase".Translate(spectatorCount, naturalSpectators);
 			if (assignments.ExtraRequiredPawnsForReading.Any())
 			{
 				TaggedString psylinkAffectedByTraitsNegativelyWarning = RoyalTitleUtility.GetPsylinkAffectedByTraitsNegativelyWarning(assignments.ExtraRequiredPawnsForReading.FirstOrDefault());

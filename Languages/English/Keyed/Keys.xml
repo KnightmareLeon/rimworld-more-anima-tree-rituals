@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
   <!--Natural Blessing Bestowal-->
+  <MATR.AnimaTreeNaturalBlessingBestowalnExplanationBase>There are {0} colonists watching. However, only {1} of them can increase the requester's chances for a blessing.</MATR.AnimaTreeNaturalBlessingBestowalnExplanationBase>
   <MATR.LetterTextAnimaTreeNaturalBlessingBestowalPositive>{PAWN_labelShort} has successfully requested for a natural blessing from the anima tree without any negative consequences. {PAWN_pronoun} can now meditate in nature and link with the anima tree to get psychic powers.</MATR.LetterTextAnimaTreeNaturalBlessingBestowalPositive>
   <MATR.LetterTextAnimaTreeNaturalBlessingBestowalNotBest>{PAWN_labelShort} has successfully requested for a natural blessing from the anima tree. {PAWN_pronoun} can now meditate in nature and link with the anima tree to get psychic powers. However, {PAWN_labelShort} was not able to take the blessing properly. {PAWN_pronoun} was psychically shocked.</MATR.LetterTextAnimaTreeNaturalBlessingBestowalNotBest>
   <MATR.LetterTextAnimaTreeNaturalBlessingBestowalNegative>Regrettably, the anima tree has rejected {PAWN_labelShort}'s request for a natural blessing. {PAWN_pronoun} must wait for 20 days to get the highest chances possible to get a natural blessing.</MATR.LetterTextAnimaTreeNaturalBlessingBestowalNegative>

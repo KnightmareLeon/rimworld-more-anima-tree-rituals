@@ -64,7 +64,7 @@
   <PreceptDef>
     <defName>MATR_AnimaTreeSootheConjuration</defName>
     <label>anima soothe conjuration</label>
-    <description>A colonist will conjure a soothe from the anima tree. The soothing effect is heavily dependent on the quality of the conjuration ritual. The more colonists in the ritual, the better the results would be. If done masterfully, anima grass will regrow.</description>
+    <description>A colonist will conjure a soothe from the anima tree. The anima soothe will significantly boost the mood of everyone in the region for the following days.</description>
     <issue>Ritual</issue>
     <preceptClass>Precept_Ritual</preceptClass>
     <visible>false</visible>
