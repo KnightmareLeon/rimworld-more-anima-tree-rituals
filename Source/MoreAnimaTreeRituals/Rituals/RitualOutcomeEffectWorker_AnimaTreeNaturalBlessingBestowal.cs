@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using MoreAnimaTreeRituals.Defs;
 using MoreAnimaTreeRituals.Effects;
 using RimWorld;
-using UnityEngine;
 using Verse;
 
 namespace MoreAnimaTreeRituals.Rituals
