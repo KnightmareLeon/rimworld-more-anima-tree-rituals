@@ -1,9 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using MoreAnimaTreeRituals.Defs;
-using MoreAnimaTreeRituals.Effects;
 using RimWorld;
-using UnityEngine;
 using Verse;
 
 namespace MoreAnimaTreeRituals.Rituals
@@ -46,6 +44,8 @@ namespace MoreAnimaTreeRituals.Rituals
 				list[num].Destroy();
 			}
 			obj.CompSubplant.Cleanup();
+
+			organizer.health.AddHediff(MATR_HediffDefOf.MATR_AnimaTreePsywielderBlessing);
 
             string text = "MATR.LetterTextAnimaPsywielderBlessingBestowalCompleted".Translate(organizer.Named("PAWN"));
             if (grassRestored > 0)
