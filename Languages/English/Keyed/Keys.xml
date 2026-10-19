@@ -19,10 +19,11 @@
   <MATR.LetterLabelAnimaSootheConjurationCompleted>{0} Anima Soothe Conjuration</MATR.LetterLabelAnimaSootheConjurationCompleted>
 
   <!--Psywielder Blessing Bestowal-->
+  <MATR.AnimaTreePsywielderBlessingBestowalExplanationBase>The anima psywielder blessing bestowal is more powerful with more participants. The more people participate, the less time the ceremony takes, and the more anima grass will grow.\n\nWith {0} additional participants, {1} anima grass will be restored at the end of the ceremony.</MATR.AnimaTreePsywielderBlessingBestowalExplanationBase>
   <MATR.RitualTargetAnimaTreeAllHavePsywielderBlessing>No colonist that does not yet have the psywielder blessing.</MATR.RitualTargetAnimaTreeAllHavePsywielderBlessing>
   <MATR.RitualRoleAlreadyPsywielderBlessed>Colonist already has the anima tree's psywielder blessing.</MATR.RitualRoleAlreadyPsywielderBlessed>
   <MATR.LetterTextAnimaPsywielderBlessingBestowalCompleted>{PAWN_labelShort} has successfully requested for a psywielder blessing from the anima tree. {PAWN_pronoun} now has increased pyschic sensitivity and can wield psychic powers more efficiently.</MATR.LetterTextAnimaPsywielderBlessingBestowalCompleted>
-  <MATR.LetterLabelAnimaPsywielderBlessingBestowalCompleted>{0} Psywielder Blessing Bestowal</MATR.LetterLabelAnimaPsywielderBlessingBestowalCompleted>
+  <MATR.LetterLabelAnimaPsywielderBlessingBestowalCompleted>Psywielder Blessing Bestowal</MATR.LetterLabelAnimaPsywielderBlessingBestowalCompleted>
 
   <!--General-->
   <MATR.LetterTextRitualCompletedAnimaGrass>A total of {0} anima grass was restored.</MATR.LetterTextRitualCompletedAnimaGrass>
