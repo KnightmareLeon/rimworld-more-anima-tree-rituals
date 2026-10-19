@@ -17,6 +17,11 @@ namespace MoreAnimaTreeRituals.Rituals
 				if (!skipReason) reason = "MATR.RitualRoleAlreadyPsywielderBlessed".Translate();
 				return false;
 			}
+			if (!MeditationFocusDefOf.Natural.CanPawnUse(p))
+			{
+				if (!skipReason) reason = "RitualTargetAnimaTreeMustBeCapableOfNature".Translate();
+				return false;
+			}
 
 			return true;
 		}
