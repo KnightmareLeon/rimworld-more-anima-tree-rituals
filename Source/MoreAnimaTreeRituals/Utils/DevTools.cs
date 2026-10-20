@@ -7,11 +7,7 @@ namespace MoreAnimaTreeRituals.Utils
 {
     public static class DevTools
     {
-        [DebugAction(
-            "More Anima Tree Rituals",
-            "Force Anima Grass",
-            actionType = DebugActionType.Action
-        )]
+        [DebugAction("More Anima Tree Rituals", "Force Anima Grass", actionType = DebugActionType.Action)]
         public static void ForceAnimaGrass()
         {
             foreach (Map map in Find.Maps)
@@ -28,11 +24,7 @@ namespace MoreAnimaTreeRituals.Utils
                 }
             }
 
-            Messages.Message(
-                "No anima tree found.",
-                MessageTypeDefOf.RejectInput,
-                historical: false
-            );
+            Messages.Message( "No anima tree found.", MessageTypeDefOf.RejectInput, historical: false);
         }
     }
 }
