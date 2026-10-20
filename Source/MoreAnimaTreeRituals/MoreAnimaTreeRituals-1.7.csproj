@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>MoreAnimaTreeRituals</AssemblyName>
+    <OutputPath>..\..\1.7\Assemblies\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <RimWorld17Dir>C:\Program Files (x86)\Steam\steamapps\common\RimWorld</RimWorld17Dir>
+    <RimWorld17Managed>$(RimWorld17Dir)\RimWorldWin64_Data\Managed</RimWorld17Managed>
+    <DefineConstants>$(DefineConstants);RIMWORLD_17</DefineConstants>
+    <RootNamespace>MoreAnimaTreeRituals</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(RimWorld17Dir)\Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="UnityStubs">
+      <HintPath>$(RimWorld17Dir)\UnityStubs.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="Waylith">
+      <HintPath>$(RimWorld17Dir)\Waylith.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
