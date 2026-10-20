@@ -27,4 +27,5 @@
 
   <!--General-->
   <MATR.LetterTextRitualCompletedAnimaGrass>A total of {0} anima grass was restored.</MATR.LetterTextRitualCompletedAnimaGrass>
+  <MATR.RitualTargetAnimaTreeMustBeCapableOfNature>Must be a colonist with the natural meditation focus type.</MATR.RitualTargetAnimaTreeMustBeCapableOfNature>
 </LanguageData>

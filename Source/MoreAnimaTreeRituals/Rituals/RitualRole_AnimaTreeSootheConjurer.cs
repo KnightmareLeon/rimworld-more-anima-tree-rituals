@@ -14,7 +14,7 @@ namespace MoreAnimaTreeRituals.Rituals
 
             if (!MeditationFocusDefOf.Natural.CanPawnUse(p))
 			{
-				if (!skipReason) reason = "RitualTargetAnimaTreeMustBeCapableOfNature".Translate();
+				if (!skipReason) reason = "MATR.RitualTargetAnimaTreeMustBeCapableOfNature".Translate();
 				return false;
 			}
 			return true;
