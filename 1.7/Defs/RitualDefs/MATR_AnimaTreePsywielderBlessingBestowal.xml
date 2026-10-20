@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--Anima Psywielder Blessing Bestowal-->
+  <RitualObligationTargetFilterDef>
+    <defName>MATR_AnimaTreePsywielderBlessingBestowal</defName>
+    <workerClass>MoreAnimaTreeRituals.Rituals.RitualObligationTargetWorker_AnimaTreePsywielderBlessingBestowal</workerClass>
+  </RitualObligationTargetFilterDef>
+
+  <RitualBehaviorDef>
+    <defName>MATR_AnimaTreePsywielderBlessingBestowal</defName>
+    <durationTicks>20000</durationTicks>
+    <workerClass>MoreAnimaTreeRituals.Rituals.RitualBehaviorWorker_AnimaTreePsywielderBlessingBestowal</workerClass>
+    <roles>
+      <li Class="MoreAnimaTreeRituals.Rituals.RitualRole_AnimaTreePsywielderBlessingRequester">
+        <label>requester</label>
+        <id>organizer</id>
+        <required>true</required>
+        <maxCount>1</maxCount>
+        <defaultForSelectedColonist>true</defaultForSelectedColonist>
+        <noCandidatesGizmoDesc>Need a colonist that is not psychically deaf and have no psywielder blessing.</noCandidatesGizmoDesc>
+        <allowChild>false</allowChild>
+        <customChildDisallowMessage>Only adults can be granted a blessing from the anima tree.</customChildDisallowMessage>
+      </li>
+    </roles>
+    <spectatorFilter Class="RitualSpectatorFilter_NatureFocus">
+      <description>Must have natural focus type.</description>
+    </spectatorFilter>
+    <spectatorsLabel>Participants</spectatorsLabel>
+    <spectatorGerund>participate</spectatorGerund>
+    <stages>
+      <li Class="MoreAnimaTreeRituals.Rituals.RitualStage_AnimaTreePsywielderBlessingBestowal">
+        <defaultDuty>LinkWithAnimaTreeSecondary</defaultDuty>
+        <endTriggers>
+          <li Class="StageEndTrigger_DurationPercentage">
+            <percentage>1</percentage>
+          </li>
+        </endTriggers>
+        <spectateDistanceOverride>3~4</spectateDistanceOverride>
+        <roleBehaviors>
+          <li>
+            <roleId>organizer</roleId>
+            <dutyDef>MATR_RequestBlessingFromAnimaTree</dutyDef>
+            <customPositions>
+              <li Class="RitualPosition_AnimaLinkingSpot" />
+            </customPositions>
+          </li>
+        </roleBehaviors>
+      </li>
+    </stages>
+  </RitualBehaviorDef>
+
+  <RitualPatternDef>
+    <defName>MATR_AnimaTreePsywielderBlessingBestowal</defName>
+    <ritualOnlyForIdeoMembers>false</ritualOnlyForIdeoMembers>
+    <ritualBehavior>MATR_AnimaTreePsywielderBlessingBestowal</ritualBehavior>
+    <ritualTargetFilter>SelectedThing</ritualTargetFilter>
+    <ritualObligationTargetFilter>MATR_AnimaTreePsywielderBlessingBestowal</ritualObligationTargetFilter>
+    <ritualOutcomeEffect>MATR_AnimaTreePsywielderBlessingBestowal</ritualOutcomeEffect>
+    <playsIdeoMusic>false</playsIdeoMusic>
+    <alwaysStartAnytime>true</alwaysStartAnytime>
+  </RitualPatternDef>
+
+  <PreceptDef>
+    <defName>MATR_AnimaTreePsywielderBlessingBestowal</defName>
+    <label>psywielder blessing bestowal</label>
+    <description>One person will request for a psywielder blessing from an anima tree. The requester will meditate in front of the anima tree, granting the requester a psywielder blessing. Others gather in a circle to watch and add psychic strength to the ritual.</description>
+    <issue>Ritual</issue>
+    <preceptClass>Precept_Ritual</preceptClass>
+    <visible>false</visible>
+    <classic>true</classic>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <selectionWeight>1.0</selectionWeight>
+    <ritualPatternBase>MATR_AnimaTreePsywielderBlessingBestowal</ritualPatternBase>
+    <iconPath>UI/Icons/Rituals/MATR_AnimaTreePsywielderBlessingBestowal</iconPath>
+    <usesIdeoVisualEffects>false</usesIdeoVisualEffects>
+    <mergeRitualGizmosFromAllIdeos>true</mergeRitualGizmosFromAllIdeos>
+    <useRepeatPenalty>false</useRepeatPenalty>
+    <showRitualFloatMenuOption>false</showRitualFloatMenuOption>
+  </PreceptDef>
+
+  <RitualOutcomeEffectDef>
+    <defName>MATR_AnimaTreePsywielderBlessingBestowal</defName>
+    <workerClass>MoreAnimaTreeRituals.Rituals.RitualOutcomeEffectWorker_AnimaTreePsywielderBlessingBestowal</workerClass>
+    <warnOnLowQuality>true</warnOnLowQuality>
+    <givesDevelopmentPoints>false</givesDevelopmentPoints>
+    <comps>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1, 0.2)</li>
+            <li>(2, 0.35)</li>
+            <li>(4, 0.5)</li>
+            <li>(6, 0.65)</li>
+            <li>(8, 0.8)</li>
+            <li>(10, 0.95)</li>
+            <li>(12, 1)</li>
+          </points>
+        </curve>
+      </li>
+    </comps>
+  </RitualOutcomeEffectDef>
+</Defs>

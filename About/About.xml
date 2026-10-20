@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>More Anima Tree Rituals</name>
-	<author>IceZero</author>
-	<packageId>IceZero.MoreAnimaTreeRituals</packageId>
-	<description>Add more rituals for the anima tree</description>
-	<supportedVersions>
-		<li>1.6</li>
-	</supportedVersions>
-	<modDependencies>
-		<li>
-			<packageId>Ludeon.RimWorld.Royalty</packageId>
-			<displayName>Royalty</displayName>
-		</li>
-	</modDependencies>
-	<loadAfter>
-		<li>Ludeon.RimWorld.Royalty</li>
-	</loadAfter>
+  <name>More Anima Tree Rituals</name>
+  <author>IceZero</author>
+  <packageId>IceZero.MoreAnimaTreeRituals</packageId>
+  <description>Add more rituals for the anima tree</description>
+  <supportedVersions>
+	<li>1.6</li>
+	<li>1.7</li>
+  </supportedVersions>
+  <modDependencies>
+	<li>
+    <packageId>Ludeon.RimWorld.Royalty</packageId>
+    <displayName>Royalty</displayName>
+	</li>
+  </modDependencies>
+  <loadAfter>
+	<li>Ludeon.RimWorld.Royalty</li>
+  </loadAfter>
 </ModMetaData>
