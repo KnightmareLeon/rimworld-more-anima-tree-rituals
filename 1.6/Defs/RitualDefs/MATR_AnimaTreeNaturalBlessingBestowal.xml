@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--Natural Blessing Bestowal-->
+  <RitualObligationTargetFilterDef>
+    <defName>MATR_AnimaTreeNaturalBlessingBestowal</defName>
+    <workerClass>MoreAnimaTreeRituals.Rituals.RitualObligationTargetWorker_AnimaTreeNaturalBlessingBestowal</workerClass>
+  </RitualObligationTargetFilterDef>
+
+  <RitualBehaviorDef>
+    <defName>MATR_AnimaTreeNaturalBlessingBestowal</defName>
+    <durationTicks>20000</durationTicks>
+    <workerClass>MoreAnimaTreeRituals.Rituals.RitualBehaviorWorker_AnimaTreeNaturalBlessingBestowal</workerClass>
+    <roles>
+      <li Class="MoreAnimaTreeRituals.Rituals.RitualRole_AnimaTreeNaturalBlessingRequester">
+        <label>requester</label>
+        <id>organizer</id>
+        <required>true</required>
+        <maxCount>1</maxCount>
+        <defaultForSelectedColonist>true</defaultForSelectedColonist>
+        <noCandidatesGizmoDesc>Need a colonist that is not psychically deaf and have no natural blessing.</noCandidatesGizmoDesc>
+        <allowChild>false</allowChild>
+        <customChildDisallowMessage>Only adults can be granted a blessing from the anima tree.</customChildDisallowMessage>
+      </li>
+    </roles>
+    <spectatorsLabel>Participants</spectatorsLabel>
+    <spectatorGerund>participate</spectatorGerund>
+    <stages>
+      <li Class="MoreAnimaTreeRituals.Rituals.RitualStage_AnimaNaturalBlessingBestowal">
+        <defaultDuty>LinkWithAnimaTreeSecondary</defaultDuty>
+        <endTriggers>
+          <li Class="StageEndTrigger_DurationPercentage">
+            <percentage>1</percentage>
+          </li>
+        </endTriggers>
+        <spectateDistanceOverride>3~4</spectateDistanceOverride>
+        <roleBehaviors>
+          <li>
+            <roleId>organizer</roleId>
+            <dutyDef>MATR_RequestBlessingFromAnimaTree</dutyDef>
+            <customPositions>
+              <li Class="RitualPosition_AnimaLinkingSpot" />
+            </customPositions>
+          </li>
+        </roleBehaviors>
+      </li>
+    </stages>
+  </RitualBehaviorDef>
+
+  <RitualPatternDef>
+    <defName>MATR_AnimaTreeNaturalBlessingBestowal</defName>
+    <ritualOnlyForIdeoMembers>false</ritualOnlyForIdeoMembers>
+    <ritualBehavior>MATR_AnimaTreeNaturalBlessingBestowal</ritualBehavior>
+    <ritualTargetFilter>SelectedThing</ritualTargetFilter>
+    <ritualObligationTargetFilter>MATR_AnimaTreeNaturalBlessingBestowal</ritualObligationTargetFilter>
+    <ritualOutcomeEffect>MATR_AnimaTreeNaturalBlessingBestowal</ritualOutcomeEffect>
+    <playsIdeoMusic>false</playsIdeoMusic>
+    <alwaysStartAnytime>true</alwaysStartAnytime>
+  </RitualPatternDef>
+
+  <PreceptDef>
+    <defName>MATR_AnimaTreeNaturalBlessigBestowal</defName>
+    <label>natural blessing bestowal</label>
+    <description>A colonist will request for a natural blessing from an anima tree. The blessing requester will meditate in front of the anima tree, and if successful, the requester will be granted a natural blessing. In most successful cases, the requester will get psychically shocked. Otherwise, the anima tree will reject the request and no blessing will be granted. In worst cases, the anima tree will issue a punishment, giving the requester paralytic abasia. Other colonists can help quicken and enhance the ritual by participating, even better if they can also connect with nature.</description>
+    <issue>Ritual</issue>
+    <preceptClass>Precept_Ritual</preceptClass>
+    <visible>false</visible>
+    <classic>true</classic>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <selectionWeight>1.0</selectionWeight>
+    <ritualPatternBase>MATR_AnimaTreeNaturalBlessingBestowal</ritualPatternBase>
+    <iconPath>UI/Icons/Rituals/MATR_AnimaTreeNaturalBlessingBestowal</iconPath>
+    <usesIdeoVisualEffects>false</usesIdeoVisualEffects>
+    <mergeRitualGizmosFromAllIdeos>true</mergeRitualGizmosFromAllIdeos>
+    <useRepeatPenalty>true</useRepeatPenalty>
+    <showRitualFloatMenuOption>false</showRitualFloatMenuOption>
+  </PreceptDef>
+
+  <RitualOutcomeEffectDef>
+    <defName>MATR_AnimaTreeNaturalBlessingBestowal</defName>
+    <workerClass>MoreAnimaTreeRituals.Rituals.RitualOutcomeEffectWorker_AnimaTreeNaturalBlessingBestowal</workerClass>
+    <warnOnLowQuality>true</warnOnLowQuality>
+    <givesDevelopmentPoints>false</givesDevelopmentPoints>
+    <comps>
+      <li Class="MoreAnimaTreeRituals.Rituals.RitualOutcomeComp_NaturalParticipantCount">
+        <label>natural participant count</label>
+        <curve>
+          <points>
+            <li>(1, 0.04)</li>
+            <li>(2, 0.08)</li>
+            <li>(4, 0.12)</li>
+            <li>(6, 0.16)</li>
+            <li>(8, 0.2)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RitualOutcomeComp_PawnSkill">
+        <roleId>organizer</roleId>
+        <skillDef>Plants</skillDef>
+        <label>Requester's plant skill</label>
+        <curve>
+          <points>
+            <li>(3, 0.021)</li>
+            <li>(4, 0.027)</li>
+            <li>(5, 0.035)</li>
+            <li>(6, 0.045)</li>
+            <li>(7, 0.058)</li>
+            <li>(8, 0.073)</li>
+            <li>(9, 0.095)</li>
+            <li>(10, 0.122)</li>
+            <li>(11, 0.157)</li>
+            <li>(12, 0.200)</li>
+            <li>(13, 0.258)</li>
+            <li>(14, 0.331)</li>
+            <li>(15, 0.426)</li>
+            <li>(16, 0.546)</li>
+            <li>(17, 0.701)</li>
+            <li>(18, 0.900)</li>
+            <li>(19, 1.155)</li>
+            <li>(20, 1.484)</li>
+          </points>
+        </curve>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <label>Punishing</label>
+        <chance>0.05</chance>
+        <positivityIndex>-2</positivityIndex>
+        <memory>MATR_PunishingAnimaTreeNaturalBlessingBestowal</memory>
+      </li>
+      <li>
+        <label>Rejected</label>
+        <chance>0.25</chance>
+        <positivityIndex>-1</positivityIndex>
+        <memory>MATR_RejectedAnimaTreeNaturalBlessingBestowal</memory>
+      </li>
+      <li>
+        <label>Successful</label>
+        <chance>0.5</chance>
+        <positivityIndex>1</positivityIndex>
+        <memory>MATR_SuccessfulAnimaTreeNaturalBlessingBestowal</memory>
+      </li>
+      <li>
+        <label>Perfect</label>
+        <chance>0.2</chance>
+        <positivityIndex>2</positivityIndex>
+        <memory>MATR_PerferctAnimaTreeNaturalBlessingBestowal</memory>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+
+</Defs>

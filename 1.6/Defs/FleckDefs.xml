@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+        <defName>MATR_NaturalBlessingLeaves</defName>
+        <altitudeLayer>Weather</altitudeLayer>
+        <randomGraphics>
+            <li>
+                <texPath>Things/Mote/MATR_AnimaTreeLeafA</texPath>
+                <graphicClass>Graphic_Fleck</graphicClass>
+            </li>
+            <li>
+                <texPath>Things/Mote/MATR_AnimaTreeLeafB</texPath>
+                <graphicClass>Graphic_Fleck</graphicClass>
+            </li>
+            <li>
+                <texPath>Things/Mote/MATR_AnimaTreeLeafB</texPath>
+                <graphicClass>Graphic_Fleck</graphicClass>
+            </li>
+            <li>
+                <texPath>Things/Mote/MATR_LeafParticleB</texPath>
+                <graphicClass>Graphic_Fleck</graphicClass>
+            </li>
+            <li>
+                <texPath>Things/Mote/MATR_LeafParticleC</texPath>
+                <graphicClass>Graphic_Fleck</graphicClass>
+            </li>
+        </randomGraphics>
+        <fadeInTime>0.15</fadeInTime>
+        <solidTime>1.5</solidTime>
+        <fadeOutTime>0.75</fadeOutTime>
+        <speedPerTime>
+            <min>-0.1</min>
+            <max>0.1</max>
+        </speedPerTime>
+        <archHeight>
+            <min>0.2</min>
+            <max>0.5</max>
+        </archHeight>
+        <archDuration>
+            <min>0.8</min>
+            <max>1.5</max>
+        </archDuration>
+        <archCurve>
+            <points>
+                <li>(0, 0)</li>
+                <li>(0.5, 1)</li>
+                <li>(1, 0)</li>
+            </points>
+        </archCurve>
+        <rotateTowardsMoveDirection>false</rotateTowardsMoveDirection>
+    </FleckDef>
+
+    <FleckDef ParentName="FleckGlowDistorted">
+        <defName>MATR_GreenGlow</defName>
+        <altitudeLayer>MetaOverlays</altitudeLayer>
+        <graphicData>
+            <texPath>Things/Mote/MATR_GreenGlow1</texPath>
+            <shaderParameters>
+                <_distortionScrollSpeed>(0.2, 0.0, 0.0)</_distortionScrollSpeed>
+                <_distortionScale>0.1</_distortionScale>
+                <_distortionIntensity>0.1</_distortionIntensity>
+            </shaderParameters>
+            <graphicClass>Graphic_Fleck</graphicClass>
+        </graphicData>
+        <fadeInTime>0.3</fadeInTime>
+        <solidTime>1.5</solidTime>
+        <fadeOutTime>0.8</fadeOutTime>
+    </FleckDef>
+</Defs>
