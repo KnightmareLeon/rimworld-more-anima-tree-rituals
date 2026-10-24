@@ -1,6 +1,10 @@
 using System.Linq;
 using RimWorld;
-using UnityEngine;
+#if RIMWORLD_17
+using Waylith.Math;
+#else
+using UnityEngine
+#endif
 using Verse;
 
 namespace MoreAnimaTreeRituals.Rituals
