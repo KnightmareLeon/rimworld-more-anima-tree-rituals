@@ -2,11 +2,11 @@
 <Defs>
 
   <DutyDef>
-    <defName>MATR_RequestBlessingFromAnimaTree</defName>
+    <defName>MATR_RequestBoonFromAnimaTree</defName>
     <socialModeMax>Off</socialModeMax>
     <thinkNode Class="ThinkNode_Priority">
       <subNodes>
-        <li Class="MoreAnimaTreeRituals.Rituals.JobGiver_RequestBlessing">
+        <li Class="MoreAnimaTreeRituals.Rituals.JobGiver_RequestBoon">
         </li>
       </subNodes>
     </thinkNode>

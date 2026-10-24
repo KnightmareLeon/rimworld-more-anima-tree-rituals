@@ -7,7 +7,7 @@ using Verse.Sound;
 
 namespace MoreAnimaTreeRituals.Rituals
 {
-	public class JobDriver_RequestingBlessing : JobDriver
+	public class JobDriver_RequestingBoon : JobDriver
 	{
 		public const int RequestingTimeTicks = 20000;
 

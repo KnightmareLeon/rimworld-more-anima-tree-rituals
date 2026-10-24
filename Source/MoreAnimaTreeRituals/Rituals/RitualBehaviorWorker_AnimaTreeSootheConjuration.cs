@@ -3,7 +3,7 @@ using RimWorld;
 #if RIMWORLD_17
 using Waylith.Math;
 #else
-using UnityEngine
+using UnityEngine;
 #endif
 using Verse;
 

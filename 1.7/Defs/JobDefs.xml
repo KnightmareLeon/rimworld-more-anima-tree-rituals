@@ -2,8 +2,8 @@
 <Defs>
 
   <JobDef>
-    <defName>MATR_RequestingBlessing</defName>
-    <driverClass>MoreAnimaTreeRituals.Rituals.JobDriver_RequestingBlessing</driverClass>
+    <defName>MATR_RequestingBoon</defName>
+    <driverClass>MoreAnimaTreeRituals.Rituals.JobDriver_RequestingBoon</driverClass>
     <reportString>requesting blessing from TargetA</reportString>
     <neverShowWeapon>true</neverShowWeapon>
   </JobDef>

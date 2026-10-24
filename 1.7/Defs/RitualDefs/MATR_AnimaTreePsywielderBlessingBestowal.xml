@@ -39,7 +39,7 @@
         <roleBehaviors>
           <li>
             <roleId>organizer</roleId>
-            <dutyDef>MATR_RequestBlessingFromAnimaTree</dutyDef>
+            <dutyDef>MATR_RequestBoonFromAnimaTree</dutyDef>
             <customPositions>
               <li Class="RitualPosition_AnimaLinkingSpot" />
             </customPositions>
