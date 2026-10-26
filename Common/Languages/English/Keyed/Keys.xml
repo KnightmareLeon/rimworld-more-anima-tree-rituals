@@ -25,7 +25,12 @@
   <MATR.LetterTextAnimaPsywielderBlessingBestowalCompleted>{PAWN_labelShort} has successfully requested for a psywielder blessing from the anima tree. {PAWN_pronoun} now has increased pyschic sensitivity and can wield psychic powers more efficiently.</MATR.LetterTextAnimaPsywielderBlessingBestowalCompleted>
   <MATR.LetterLabelAnimaPsywielderBlessingBestowalCompleted>Psywielder Blessing Bestowal</MATR.LetterLabelAnimaPsywielderBlessingBestowalCompleted>
 
+  <!--Anima Curing Ritual-->
+  <MATR.RitualRoleNoWorstHealthCondition>Must be a colonist with a bad health condition.</MATR.RitualRoleNoWorstHealthCondition>
+  <MATR.RitualTargetAnimaTreeAllHaveNoWorstHealthCondition>No colonist that has at least one bad health condition.</MATR.RitualTargetAnimaTreeAllHaveNoWorstHealthCondition>
+
   <!--General-->
   <MATR.LetterTextRitualCompletedAnimaGrass>A total of {0} anima grass was restored.</MATR.LetterTextRitualCompletedAnimaGrass>
   <MATR.RitualTargetAnimaTreeMustBeCapableOfNature>Must be a colonist with the natural meditation focus type.</MATR.RitualTargetAnimaTreeMustBeCapableOfNature>
+  <MATR.AnimaTreeCuringRitualExplanationBase>The anima curing ritual will have higher chances to be successful with more participants and with a psychically sensitive requester. The more people participate, the less time the ceremony takes, and the more anima grass will grow.\n\nWith {0} additional participants and the requester's psychic sensitivity stat of {1}, {2} anima grass will be restored at the end of the ceremony if successful.</MATR.AnimaTreeCuringRitualExplanationBase>
 </LanguageData>
