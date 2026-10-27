@@ -26,11 +26,16 @@
   <MATR.LetterLabelAnimaPsywielderBlessingBestowalCompleted>Psywielder Blessing Bestowal</MATR.LetterLabelAnimaPsywielderBlessingBestowalCompleted>
 
   <!--Anima Curing Ritual-->
+  <MATR.AnimaTreeCuringRitualExplanationBase>The anima curing ritual will have higher chances to be successful with more participants and with a psychically sensitive requester. The more people participate, the less time the ceremony takes, and the more anima grass will grow.\n\nWith {0} additional participants and the requester's psychic sensitivity stat of {1}, {2} anima grass will be restored at the end of the ceremony if successful.</MATR.AnimaTreeCuringRitualExplanationBase>
   <MATR.RitualRoleNoWorstHealthCondition>Must be a colonist with a bad health condition and natural meditation focus type.</MATR.RitualRoleNoWorstHealthCondition>
   <MATR.RitualTargetAnimaTreeAllHaveNoWorstHealthCondition>No colonist that has at least one bad health condition and natural meditation focus type.</MATR.RitualTargetAnimaTreeAllHaveNoWorstHealthCondition>
+  <MATR.LetterTextAnimaCuringRitualCompletionFailed>The anima curing was a failure. Even worse, all the anima grass needed for the ritual was consumed with the requester not getting any cure.</MATR.LetterTextAnimaCuringRitualCompletionFailed>
+  <MATR.LetterTextAnimaCuringRitualCompletionFlawed>The anima curing ritual was finished, however there is a flaw. The requester was not cured of any ailment or disease but they do get to receive an anima curing seed. The seed will greatly boost the requester's immunity gain and lessen the requester's pain.</MATR.LetterTextAnimaCuringRitualCompletionFlawed>
+  <MATR.LetterTextAnimaCuringRitualCompletionSuccessful>The anima curing was a success and one of the requester's negative health conditions will be cured.</MATR.LetterTextAnimaCuringRitualCompletionSuccessful>
+  <MATR.LetterTextAnimaCuringRitualCompletionComplete>The anima curing was a complete success and all of the requester's megatove health conditions were cured.</MATR.LetterTextAnimaCuringRitualCompletionComplete>
 
   <!--General-->
   <MATR.LetterTextRitualCompletedAnimaGrass>A total of {0} anima grass was restored.</MATR.LetterTextRitualCompletedAnimaGrass>
   <MATR.RitualTargetAnimaTreeMustBeCapableOfNature>Must be a colonist with the natural meditation focus type.</MATR.RitualTargetAnimaTreeMustBeCapableOfNature>
-  <MATR.AnimaTreeCuringRitualExplanationBase>The anima curing ritual will have higher chances to be successful with more participants and with a psychically sensitive requester. The more people participate, the less time the ceremony takes, and the more anima grass will grow.\n\nWith {0} additional participants and the requester's psychic sensitivity stat of {1}, {2} anima grass will be restored at the end of the ceremony if successful.</MATR.AnimaTreeCuringRitualExplanationBase>
+
 </LanguageData>

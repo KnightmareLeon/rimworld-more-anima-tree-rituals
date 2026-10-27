@@ -128,28 +128,28 @@
     </comps>
     <outcomeChances>
       <li>
-        <label>Faileds</label>
+        <label>Failed</label>
         <chance>0.05</chance>
         <positivityIndex>-2</positivityIndex>
-        <memory>MATR_PunishingAnimaTreeNaturalBlessingBestowal</memory>
+        <memory>MATR_FailedAnimaCuringRitual</memory>
       </li>
       <li>
-        <label>Compensated</label>
+        <label>Flawed</label>
         <chance>0.15</chance>
         <positivityIndex>-1</positivityIndex>
-        <memory>MATR_RejectedAnimaTreeNaturalBlessingBestowal</memory>
+        <memory>MATR_FlawedAnimaCuringRitual</memory>
       </li>
       <li>
         <label>Successful</label>
         <chance>0.7</chance>
         <positivityIndex>1</positivityIndex>
-        <memory>MATR_SuccessfulAnimaTreeNaturalBlessingBestowal</memory>
+        <memory>MATR_SuccessfulAnimaCuringRitual</memory>
       </li>
       <li>
-        <label>Perfect</label>
+        <label>Complete</label>
         <chance>0.1</chance>
         <positivityIndex>2</positivityIndex>
-        <memory>MATR_PerferctAnimaTreeNaturalBlessingBestowal</memory>
+        <memory>MATR_CompleteAnimaCuringRitual</memory>
       </li>
     </outcomeChances>
   </RitualOutcomeEffectDef>

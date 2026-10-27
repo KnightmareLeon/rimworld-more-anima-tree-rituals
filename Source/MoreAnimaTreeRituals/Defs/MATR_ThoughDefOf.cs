@@ -1,5 +1,4 @@
 using RimWorld;
-using Verse;
 
 namespace MoreAnimaTreeRituals.Defs
 {
@@ -13,6 +12,10 @@ namespace MoreAnimaTreeRituals.Defs
         public static ThoughtDef MATR_LesserAnimaTreeSootheMoodBoost;
         public static ThoughtDef MATR_LesserAnimaTreeSootheMoodBoostNatural;
         public static ThoughtDef MATR_AnimaTreeSootheMoodBoostNatural;
+        public static ThoughtDef MATR_ReceivedAnimaCure;
+        public static ThoughtDef MATR_ReceivedCompleteAnimaCure;
+        public static ThoughtDef MATR_ReceivedAnimaCuringSeed;
+        public static ThoughtDef MATR_FailedAnimaCuring;
 
         static MATR_ThoughtDefOf()
         {

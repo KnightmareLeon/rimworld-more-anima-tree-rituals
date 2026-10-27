@@ -8,6 +8,7 @@ namespace MoreAnimaTreeRituals.Defs
     {
         public static HediffDef MATR_AnimaTreeNaturalBlessing;
         public static HediffDef MATR_AnimaTreePsywielderBlessing;
+        public static HediffDef MATR_AnimaCuringSeed;
         static MATR_HediffDefOf()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(MATR_HediffDefOf));
