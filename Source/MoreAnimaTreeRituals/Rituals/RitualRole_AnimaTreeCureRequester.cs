@@ -1,4 +1,3 @@
-using MoreAnimaTreeRituals.Defs;
 using RimWorld;
 using Verse;
 
@@ -11,6 +10,12 @@ namespace MoreAnimaTreeRituals.Rituals
 			bool baseRes = base.AppliesToPawn(p, out reason, selectedTarget, ritual: ritual, assignments: assignments, skipReason: skipReason);
 
 			if(!baseRes) return baseRes;
+
+            if (!MeditationFocusDefOf.Natural.CanPawnUse(p))
+			{
+				if (!skipReason) reason = "MATR.RitualTargetAnimaTreeMustBeCapableOfNature".Translate();
+				return false;
+			}
 
 			if (!HealthUtility.TryGetWorstHealthCondition(p, out Hediff hediff, out BodyPartRecord part))
 			{

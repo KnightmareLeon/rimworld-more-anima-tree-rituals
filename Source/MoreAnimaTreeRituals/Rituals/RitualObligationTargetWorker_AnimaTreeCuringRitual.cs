@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Verse;
 using RimWorld;
-using MoreAnimaTreeRituals.Defs;
 
 namespace MoreAnimaTreeRituals.Rituals
 {
@@ -31,17 +30,12 @@ namespace MoreAnimaTreeRituals.Rituals
 				return false;
 			}
 			bool flag = false;
-            bool flag2 = false;
 			foreach (Pawn item in target.Map.mapPawns.FreeColonistsSpawned)
 			{
-				if (compPsylinkable.Props.requiredFocus.CanPawnUse(item))
+				if (compPsylinkable.Props.requiredFocus.CanPawnUse(item) && HealthUtility.TryGetWorstHealthCondition(item, out Hediff hediff, out BodyPartRecord part))
 				{
 					flag = true;
 				}
-                if (!HealthUtility.TryGetWorstHealthCondition(item, out Hediff hediff, out BodyPartRecord part))
-                {
-                    flag2 = true;
-                }
 			}
 			if (compPsylinkable.CompSubplant.SubplantsForReading.Count < CuringRitualGrassCount)
 			{
@@ -49,12 +43,8 @@ namespace MoreAnimaTreeRituals.Rituals
 			}
 			if (!flag)
 			{
-				return "RitualTargetAnimaTreeNoPawnsWithNatureFocus".Translate();
+				return "MATR.RitualTargetAnimaTreeAllHaveNoWorstHealthCondition".Translate();
 			}
-            if (!flag2)
-            {
-                return "MATR.RitualTargetAnimaTreeAllHaveNoWorstHealthCondition".Translate();
-            }
 			return true;
 		}
 

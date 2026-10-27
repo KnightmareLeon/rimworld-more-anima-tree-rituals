@@ -26,8 +26,8 @@
   <MATR.LetterLabelAnimaPsywielderBlessingBestowalCompleted>Psywielder Blessing Bestowal</MATR.LetterLabelAnimaPsywielderBlessingBestowalCompleted>
 
   <!--Anima Curing Ritual-->
-  <MATR.RitualRoleNoWorstHealthCondition>Must be a colonist with a bad health condition.</MATR.RitualRoleNoWorstHealthCondition>
-  <MATR.RitualTargetAnimaTreeAllHaveNoWorstHealthCondition>No colonist that has at least one bad health condition.</MATR.RitualTargetAnimaTreeAllHaveNoWorstHealthCondition>
+  <MATR.RitualRoleNoWorstHealthCondition>Must be a colonist with a bad health condition and natural meditation focus type.</MATR.RitualRoleNoWorstHealthCondition>
+  <MATR.RitualTargetAnimaTreeAllHaveNoWorstHealthCondition>No colonist that has at least one bad health condition and natural meditation focus type.</MATR.RitualTargetAnimaTreeAllHaveNoWorstHealthCondition>
 
   <!--General-->
   <MATR.LetterTextRitualCompletedAnimaGrass>A total of {0} anima grass was restored.</MATR.LetterTextRitualCompletedAnimaGrass>
