@@ -15,6 +15,8 @@
                 </statOffsets>
             </li>
         </stages>
+        <isBad>false</isBad>
+        <everCurableByItem>false</everCurableByItem>
         <duplicationAllowed>false</duplicationAllowed>
     </HediffDef>
 
@@ -31,6 +33,8 @@
                 </statOffsets>
             </li>
         </stages>
+        <isBad>false</isBad>
+        <everCurableByItem>false</everCurableByItem>
         <duplicationAllowed>false</duplicationAllowed>
     </HediffDef>
 </Defs>
