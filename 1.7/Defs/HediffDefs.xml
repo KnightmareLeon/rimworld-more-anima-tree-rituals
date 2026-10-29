@@ -43,14 +43,16 @@
   <HediffDef>
     <defName>MATR_AnimaCuringSeed</defName>
     <label>anima curing seed</label>
+    <hediffClass>HediffWithComps</hediffClass>
     <description>A seed that greatly boosts immunity gain and significantly lessens pain. This seed will disappear after 5 days.</description>
     <stages>
       <li>
         <statOffsets>
           <ImmunityGainSpeed>1</ImmunityGainSpeed>
           <ImmunityGainSpeedFactor>2.0</ImmunityGainSpeedFactor>
-          <painFactor>0.5</painFactor>
+          <PainShockThreshold>0.50</PainShockThreshold>
         </statOffsets>
+        <painFactor>0.5</painFactor>
       </li>
     </stages>
     <isBad>false</isBad>
